@@ -5,17 +5,10 @@
     margin-right: auto;
 }
 
-
-img.center
+img, iframe, embed
 {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-iframe
-{
+    margin-left:auto;
+    margin-right:auto;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
