@@ -32,4 +32,4 @@ Enjoy!)
 <iframe width="560" height="315" src="http://www.youtube.com/embed/H3MIAfOgjBI?rel=0"></iframe>
 
 ### Contact me
-[edwin@edwinjones.me.uk](mailto:edwin@edwinjones.me.uk)
+<script type="text/javascript">printEmailAddress();</script>
