@@ -19,6 +19,7 @@ Model B+ and more recently a Model B (2). Those are all pretty good devices in t
 <li><a href="http://raspi.tv/2015/raspberry-pi-zero-power-measurements">It uses far less power than any other Pi, approaching Arduino level of efficiency.</a></li>
 <li><a href="http://swag.raspberrypi.org/collections/pi-zero/products/pi-zero"><b>It costs £4/$5.</b><i> Seriously.</i></a></li>
 
+
 These advantages add up to make the Zero very compelling. I've already replaced my home server (an old Model A) with a Zero 
 as not only does the it use so little power that I can use a spare USB port on the modem to power the it, 
 but I can also just stick it to the underside of the modem due to the tiny size of the thing. BEHOLD!

@@ -48,9 +48,7 @@ and PWADS as <em>mod/level files</em> you won't go too far wrong.
 I intend to update this application and as soon as I do, the updates will be applied
 when you next run the application as long as you are connected to the internet.
 If you have any questions or suggestions about the application please e-mail me
-at:
-
-**TODO ADD MY EMAIL ADDRESS**
+at: <script type="text/javascript">printEmailAddress();</script>
 
 I hope you all enjoy this as much as I have enjoyed making it, and happy "dooming"
 to the lot of you!
