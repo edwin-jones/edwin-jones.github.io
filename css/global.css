@@ -5,7 +5,7 @@
     margin-right: auto;
 }
 
-img, iframe, embed
+a.img, iframe, embed
 {
     display: block;
     margin-left:auto;
