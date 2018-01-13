@@ -4,32 +4,10 @@ title: About
 permalink: /about/
 ---
 
-<table class="TextCenter" style="width: 450px;">
-    <tr>
-        <td>
-            <img alt="me" src="/static/images/me.jpg" style="height: 180px;" />
-        </td>
-        <td style="width: 20px;"></td>
-        <td>
-            <div style="text-align: left;">
-                <p>
-                    <b>Name: </b>Edwin Jones
-                </p>
-                <p>
-                    <b>Location: </b>Surrey/Sussex
-                </p>
-                <p>
-                    <b v-html="email"></b>          
-                </p>
-            </div>
-        </td>
-    </tr>
-</table>
-
 Hi there! My name is Edwin, and I'm a professional software engineer with experience
 in C#, Python, HTML, Javascript, CSS, SQL, XML, C++ 
 and many more acronyms that are too numerous to fit onto one page. I love to
-tinker. I originally built site from scratch in ASP.NET to keep track of my random projects and host my rants. I've moved to [jekyll](https://jekyllrb.com/) and [Github pages](https://pages.github.com/) more recently to give it a more up to date feel. You can find the repository I'm using [here.](https://github.com/edwinj85/edwinj85.github.io)
+tinker. I originally built site from scratch in ASP.NET to keep track of my random projects and host my rants. I've moved to [Jekyll](https://jekyllrb.com/) and [Github Pages](https://pages.github.com/) more recently to give it a more up to date feel. You can find the repository I'm using [here.](https://github.com/edwinj85/edwinj85.github.io)
 
 I have previously spent my time writing for websites such as <a href="http://www.xboxic.com/">Xboxic</a>
 and <a href="http://parentalguidanceuk.blogspot.com/">Parental Guidance</a>, the
