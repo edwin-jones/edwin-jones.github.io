@@ -7,8 +7,8 @@
 
 iframe, embed
 {
+    max-height: 360;
     max-width: 640;
-    max-width: 360;
     display: block;
     margin-left:auto;
     margin-right:auto;

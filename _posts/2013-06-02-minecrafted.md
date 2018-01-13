@@ -20,15 +20,15 @@ I have to date bought four of the blighters, three model Bs and one model A but 
 What did I do with them you say? Apart from learn linux pretty much from scratch I’ve done this:
 
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/48fR3IzGqaQ?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/48fR3IzGqaQ?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
 and this:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/AYVc8iWS2gw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/AYVc8iWS2gw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
 and this:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/OzfA0IgtrPE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/OzfA0IgtrPE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
 Which is all pretty cool, but my current setup is my favourite. My model A is my media server thanks to the amazing <a href="https://twitter.com/SamNazarko">Sam Nazarko</a> and his 
 <a href="http://www.raspbmc.com/">Raspbmc project</a>, 
