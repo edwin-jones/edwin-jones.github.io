@@ -1,0 +1,21 @@
+.centered
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+img.center
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iframe
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
