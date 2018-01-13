@@ -13,8 +13,7 @@ I have previously spent my time writing for websites such as <a href="http://www
 and <a href="http://parentalguidanceuk.blogspot.com/">Parental Guidance</a>, the
 latter of which I co-founded. I also have experience presenting live TV shows on
 the now defunct Game Network show <a href="http://en.wikipedia.org/wiki/Game_Guru">Game
-Guru.</a> I currently work as a software developer at <a href="http://www.mediatonicgames.com/">Mediatonic,</a>  
-however before that I worked as a software engineer for <a href="https://www.exclaimer.co.uk/">Exclaimer,</a> <a href="https://www.ea.com/en-gb">Electronic Arts,</a> 
+Guru.</a> I currently work as a software developer at <a href="http://www.mediatonicgames.com/">Mediatonic,</a> however before that I worked as a software engineer for <a href="https://www.exclaimer.co.uk/">Exclaimer,</a> <a href="https://www.ea.com/en-gb">Electronic Arts,</a> 
 <a href="http://www.premiertaxfree.com/">Premier Tax Free</a> and for <a href="http://www.computerc.co.uk">Computer Care.</a>
 
 I have samples of my work all over this site so feel free to look around. More things
