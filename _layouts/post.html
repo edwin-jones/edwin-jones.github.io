@@ -6,4 +6,20 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
+
+  <!--facebook comments-->
+  <div id="fb-root">
+  </div>
+  <script type="text/javascript">        (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+      } (document, 'script', 'facebook-jssdk'));</script>
+  <!-- Facebook comment element-->
+  <div class="fb-comments" data-href='http://edwinjones.me.uk/{{ page.title }}.aspx'
+      data-num-posts="10" data-width="700">
+  </div>
+  <!-- end of facebook comments-->
 </div>
