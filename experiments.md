@@ -6,7 +6,7 @@
 # Experiments
 
 On this page you can see random projects and tinkerings I have made over the years.
-
+<br>
 ## Virtual Binary Adding Machine
 This is an 8 bit/single byte binary adding machine designed to demonstrate simple
 binary logic. This machine can perform basic operations on any two unsigned 8 bit
@@ -177,7 +177,7 @@ Please note that input two is the subtrahend in subtraction operations.
 </div>
 <h4 id="output" class="textcenter">ERROR
 </h4>
-
+<br>
 ### Digital Clock
 <p>
     This is a simple digital clock that allows you to check the time in different cities
