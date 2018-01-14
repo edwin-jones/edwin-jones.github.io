@@ -1,3 +1,8 @@
+---
+layout: page
+title: Experiments
+---
+
 <script src="scripts/jquery-1.4.1.min.js"></script>
 <script src="scripts/VBAMcode.js"></script>
 <script src="scripts/clock.js"></script>
