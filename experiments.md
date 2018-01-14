@@ -8,8 +8,6 @@ title: Experiments
 <script src="scripts/clock.js"></script>
 <link rel="stylesheet" href="/css/VBAM.css?_={{site.time | date: '%s%N'}}">
 
-# Experiments
-
 On this page you can see random projects and tinkerings I have made over the years.
 <br>
 <br>
