@@ -28,7 +28,9 @@ check some of my writing out.
 of me in 2005 reviewing Perfect Dark Zero just after the launch of the Xbox 360.
 Enjoy!)
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/H3MIAfOgjBI?rel=0" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+<iframe src="http://www.youtube.com/embed/H3MIAfOgjBI?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Contact me
 <script type="text/javascript">printEmailAddress();</script>
