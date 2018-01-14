@@ -3,7 +3,7 @@ layout: page
 title: Games
 ---
 
-Here you can find details of some of the games I have worked on over the years
+Here you can find details of some of the games I have worked on previously.
 
 ### Battlefield 1 (2016)
 
