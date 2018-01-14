@@ -8,7 +8,7 @@ title: Rants
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
+      <div class="post-date">{{ post.date | date_to_string }}</div>
       <div class="entry">
         {{ post.excerpt }}
       </div>
