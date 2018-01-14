@@ -19,19 +19,25 @@ I have to date bought four of the blighters, three model Bs and one model A but 
 
 What did I do with them you say? Apart from learn linux pretty much from scratch I’ve done this:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/48fR3IzGqaQ?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/48fR3IzGqaQ?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <br>
 
 and this:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/AYVc8iWS2gw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/AYVc8iWS2gw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <br>
 
 and this:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/OzfA0IgtrPE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/OzfA0IgtrPE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <br>
 
