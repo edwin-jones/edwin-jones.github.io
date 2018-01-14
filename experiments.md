@@ -19,7 +19,7 @@ binary integers and output the result in binary as an unsigned integer.
 <br />
 <br />
 <div id="input1" class="center">
-    <table class="TextCenter" style="width: 500px;">
+    <table class="textcenter" style="width: 500px;">
         <tr>
             <td></td>
             <td>128
@@ -173,7 +173,7 @@ binary integers and output the result in binary as an unsigned integer.
         </tr>
     </table>
 </div>
-<div class="TextCenter">
+<div class="textcenter">
     <p>
         <input type="button" value="Add" onclick="Calculate('add')" />
         <input type="button" value="Subtract" onclick="Calculate('subtract')" />
@@ -184,7 +184,7 @@ binary integers and output the result in binary as an unsigned integer.
         <input type="reset" value="RESET" onclick="GetOutput().innerHTML = readyString;" />
     </p>
 </div>
-<h4 id="output" class="TextCenter">ERROR
+<h4 id="output" class="textcenter">ERROR
 </h4>
 <br />
 <br />
@@ -196,9 +196,9 @@ binary integers and output the result in binary as an unsigned integer.
     across the world. It uses your system clock, so if your system time is incorrect
     it will also be wrong.
 </p>
-<p id="Clock" class="TextCenter" style="font-size: 3.0em;">
+<p id="Clock" class="textcenter" style="font-size: 3.0em;">
 </p>
-<div class="TextCenter">
+<div class="textcenter">
     <input type="radio" name="City" value="-8" />San Francisco&nbsp;
     <input type="radio" name="City" value="-5" />New York&nbsp;
     <input type="radio" name="City" value="0" checked="checked" />London&nbsp;
