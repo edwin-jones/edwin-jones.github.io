@@ -11,7 +11,7 @@ Here you can find details of some of the games I have worked on previously.
 
 [![BF1](https://upload.wikimedia.org/wikipedia/en/f/fc/Battlefield_1_cover_art.jpg)](https://en.wikipedia.org/wiki/Battlefield_1)
 
-I helped write some tools as well as editing some of the animations alongside the artists on this title. It
+I helped write some tools as well as editing some of the vehicle animations alongside the artists on this title. It
 was quite fun to play around with their amazing work and the old style vehicles of the WW1 era.
 
 <br>
