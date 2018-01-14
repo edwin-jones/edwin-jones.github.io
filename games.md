@@ -7,6 +7,7 @@ Here you can find details of some of the games I have worked on over the years
 
 ### Battlefield 1 (2016)
 
+<br>
 
 [![BF1](https://upload.wikimedia.org/wikipedia/en/f/fc/Battlefield_1_cover_art.jpg)](https://en.wikipedia.org/wiki/Battlefield_1)
 
@@ -17,6 +18,7 @@ was quite fun to play around with their amazing work and the old style vehicles 
 
 ### Need for Speed (2015)
 
+<br>
 
 [![NFS](https://upload.wikimedia.org/wikipedia/en/a/a9/Need_for_Speed_2015.jpg)](https://en.wikipedia.org/wiki/Need_for_Speed_(2015_video_game))
 
@@ -26,6 +28,7 @@ On this game I worked with the UI team, primarily working on UI scripting and ma
 
 ### Battlefield Hardline (2015)
 
+<br>
 
 [![BFH](https://upload.wikimedia.org/wikipedia/en/a/aa/Battlefield_Hardline.jpg)](https://en.wikipedia.org/wiki/Battlefield_Hardline)
 
@@ -35,6 +38,7 @@ I helped to write several automation tests on this title for blackbox testing an
 
 ### Need For Speed Rivals (2013)
 
+<br>
 
 [![NFS](https://upload.wikimedia.org/wikipedia/en/e/e5/Need_for_Speed_Rivals_cover.jpg)](https://en.wikipedia.org/wiki/Need_for_Speed_Rivals)
 
