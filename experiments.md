@@ -7,7 +7,7 @@
 
 On this page you can see random projects and tinkerings I have made over the years.
 <br>
-
+<br>
 ### Virtual Binary Adding Machine
 This is an 8 bit/single byte binary adding machine designed to demonstrate simple
 binary logic. This machine can perform basic operations on any two unsigned 8 bit
