@@ -42,4 +42,4 @@ I helped to write several automation tests on this title for blackbox testing an
 
 [![NFS](https://upload.wikimedia.org/wikipedia/en/e/e5/Need_for_Speed_Rivals_cover.jpg)](https://en.wikipedia.org/wiki/Need_for_Speed_Rivals)
 
-I helped to write most of the automation tests on this title for blackbox testing. I also worked on the transition of the testing platform over from Gen 3 consoles *(PS3, Xbox 360)* to Gen 4 *(Xbox One and PS4)*.
+I helped to write most of the automation tests on this title for blackbox testing. I also worked on the transition of the testing platform over from Gen 3 consoles *(PS3, Xbox 360)* to Gen 4 *(PS4, Xbox One)*.
