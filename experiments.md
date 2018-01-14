@@ -8,16 +8,12 @@
 On this page you can see random projects and tinkerings I have made over the years.
 
 ## Virtual Binary Adding Machine
-<p class="center">
 This is an 8 bit/single byte binary adding machine designed to demonstrate simple
 binary logic. This machine can perform basic operations on any two unsigned 8 bit
 binary integers and output the result in binary as an unsigned integer.
-</p>
-<p class="center">
-    Please note that input two is the subtrahend in subtraction operations.
-</p>
-<br />
-<br />
+
+Please note that input two is the subtrahend in subtraction operations.
+
 <div id="input1" class="center">
     <table class="textcenter" style="width: 500px;">
         <tr>
@@ -177,20 +173,12 @@ binary integers and output the result in binary as an unsigned integer.
     <p>
         <input type="button" value="Add" onclick="Calculate('add')" />
         <input type="button" value="Subtract" onclick="Calculate('subtract')" />
-        <!--<input type="button" value="Multiply" onclick="alert('not implemented yet')" />
-    <input type="button" value="Divide" onclick="alert('not implemented yet')" />-->
-    </p>
-    <p>
-        <input type="reset" value="RESET" onclick="GetOutput().innerHTML = readyString;" />
     </p>
 </div>
 <h4 id="output" class="textcenter">ERROR
 </h4>
-<br />
-<br />
-<br />
-<br />
-## Digital Clock
+
+### Digital Clock
 <p>
     This is a simple digital clock that allows you to check the time in different cities
     across the world. It uses your system clock, so if your system time is incorrect
