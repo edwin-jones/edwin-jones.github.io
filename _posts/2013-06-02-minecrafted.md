@@ -21,15 +21,15 @@ What did I do with them you say? Apart from learn linux pretty much from scratch
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/48fR3IzGqaQ?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
-and this:
-
 <br>
+
+and this:
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/AYVc8iWS2gw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
-and this:
-
 <br>
+
+and this:
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/OzfA0IgtrPE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 

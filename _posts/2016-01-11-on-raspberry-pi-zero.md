@@ -12,7 +12,7 @@ the rather amazing Raspberry Pi Zero.
 
 Long time readers of my site may be aware that I'm somewhat of a fanboy when it comes to Raspberry Pis. Over the years I've bought a Model B (256MB), Model B (512MB), Model A, 
 Model B+ and more recently a Model B (2). Those are all pretty good devices in their own ways but the Zero takes the cake in many respects:
-
+<br>
 <li><a href="https://www.raspberrypi.org/blog/raspberry-pi-zero/"> It's faster than the original model Raspberry Pi (1000mhz vs 700mhz) with the same CPU.</a></li>
 <li><a href="https://www.raspberrypi.org/blog/raspberry-pi-zero/"> It's got more ram than the original Raspberry Pi (512MB vs 256MB).</a></li>
 <li><a href="http://raspi.tv/2015/raspberry-pi-zero-free-on-the-cover-of-this-months-magpi-magazine">It's much smaller than the other Raspberry Pi models.</a></li>
