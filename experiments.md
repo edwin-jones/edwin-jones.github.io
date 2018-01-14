@@ -15,7 +15,7 @@ binary integers and output the result in binary as an unsigned integer.
 Please note that input two is the subtrahend in subtraction operations.
 
 <div id="input1" class="center">
-    <table class="textcenter" style="width: 500px;">
+    <table class="textcenter">
         <tr>
             <td></td>
             <td>128
