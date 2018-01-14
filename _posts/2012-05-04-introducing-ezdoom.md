@@ -14,7 +14,7 @@ which I can't recommend enough. It's one of the best Doom mods ever made. Enjoy!
 
 
 It's been a busy few weeks for me lately but I still wanted to make time to share
-with you something I have been working on for the last few weeks: <a href="http://edwinjones.me.uk/applications/ezDoom/setup.exe">ezDoom!</a>
+with you something I have been working on for the last few weeks: <a href="https://github.com/edwinj85/ezDoom/releases/download/v1/ezDoom.zip">ezDoom!</a>
 
 ![ezDoom]({{ site.baseurl }}/images/rantimages/ezDoom.png)
 
