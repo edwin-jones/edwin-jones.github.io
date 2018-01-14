@@ -1,6 +1,6 @@
-<script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="scripts/VBAMcode.js"></script>
-<script type="text/javascript" src="scripts/clock.js"></script>
+<script src="scripts/jquery-1.4.1.min.js"></script>
+<script src="scripts/VBAMcode.js"></script>
+<script src="scripts/clock.js"></script>
 <link rel="stylesheet" href="/css/VBAM.css?_={{site.time | date: '%s%N'}}">
 
 # Experiments
