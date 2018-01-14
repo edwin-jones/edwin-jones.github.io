@@ -8,6 +8,15 @@
 On this page you can see random projects and tinkerings I have made over the years.
 <br>
 <br>
+
+### Mirrorless Edge (Mini Ludum Dare Entry, March 2014)</h3>
+This is a little game I made with [my friend Steven,](http://sbatman.com/) back in March 2014. 
+We used typescript for this *(because it is **awesome**)*. The game is a simple endless runner but can still be quite addictive. Click the image below to load the game in your browser and use the arrow keys to play.
+
+[![Alt text](images/mirrorlessedge.jpg)](http://sbatman.com/minild50/index.html)
+
+<br />
+
 ### Virtual Binary Adding Machine
 This is an 8 bit/single byte binary adding machine designed to demonstrate simple
 binary logic. This machine can perform basic operations on any two unsigned 8 bit
