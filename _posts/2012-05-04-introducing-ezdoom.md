@@ -40,7 +40,7 @@ choose your own, but remember that a PWAD needs the correct IWAD to run. FreeDoo
 will work on most Doom PWADS if you don't have to correct IWAD to hand.
 
 If you don't know what an IWAD or PWAD is, they are Doom Engine data files - IWADS
-hold crucial game information (gun images, enemy sprites that sort of thing) while
+hold crucial game information (gun images, enemy sprites - that sort of thing) while
 PWADS contain new level data, but <a href="http://en.wikipedia.org/wiki/Doom_WAD">wikipedia
 has a better explanation of how they work.</a> If you think of IWADS as <em>game files</em>
 and PWADS as <em>mod/level files</em> you won't go too far wrong.
