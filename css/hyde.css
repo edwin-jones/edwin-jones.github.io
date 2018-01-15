@@ -195,6 +195,15 @@ a.sidebar-nav-item:focus {
   color: #ac4142;
 }
 
+/* Dark Red */
+.theme-base-dark-red .sidebar {
+  background-color: #990000;
+}
+.theme-base-dark-red .content a,
+.theme-base-dark-red .related-posts li a:hover {
+  color: #990000;
+}
+
 /* Orange */
 .theme-base-09 .sidebar {
   background-color: #d28445;
