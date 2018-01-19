@@ -6,7 +6,8 @@ title: 'Edwin Jones'
 title_separator: "|"
 description: My personal website & blog
 
-baseurl: http://edwinjones.me.uk
+baseurl: "" 
+url: http://edwinjones.me.uk
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
