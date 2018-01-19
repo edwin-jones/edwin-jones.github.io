@@ -4,8 +4,7 @@
 
 title: 'Edwin Jones'
 title_separator: "|"
-description: > # this means to ignore newlines until "baseurl:"
-  My personal website & blog
+description: My personal website & blog
 
 baseurl: http://edwinjones.me.uk
 
