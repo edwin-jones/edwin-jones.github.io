@@ -184,8 +184,8 @@ Please note that input two is the subtrahend in subtraction operations.
 </div>
 <div class="textcenter">
     <p>
-        <input type="button" value="Add" onclick="Calculate('add')" />
-        <input type="button" value="Subtract" onclick="Calculate('subtract')" />
+        <input type="button" class="btn btn-primary" value="Add" onclick="Calculate('add')" />
+        <input type="button" class="btn btn-primary" value="Subtract" onclick="Calculate('subtract')" />
     </p>
 </div>
 <h4 id="output" class="textcenter">ERROR
