@@ -79,13 +79,13 @@ my Huawei HG533 router’s usb port with some old usb and ethernet cables I dug 
 You don’t need to take my word for all of this however, 
 if you have a copy of minecraft you can play it now by visiting my server at <b>minecrafted.no-ip.biz</b> and view the world for yourself. The only rule is not to destroy the work of other players. 
 
-Oh, and just a heads up - I’ve written a custom plugin that will give you a nasty surprise if you try to hit my character in any way. What’s the point of building your own Minecraft server if you can’t abuse your power?
+Oh, and just a heads up - I’ve written a custom plugin that will give you a nasty surprise if you try to hit my character in any way. What’s the point of building your own minecraft server if you can’t abuse your power?
 
 I can’t take all the credit for this however, I mostly  used <a href="http://picraftbukkit.webs.com/pi-minecraft-server-how-to">this guide</a> to get my server up and running,
 including using the noip client to keep my server address updated as my home ip
 will change frequently and TalkTalk sadly do not offer static IP addresses at this moment in time.
 
-To a lot of people, this sort of thing doesn’t seem like much and in many ways they would be right. For me however, building, installing and maintaining my own publicly availableminecraft server was some of the most fun I’ve had with computers in as long as I can remember, and I hope to begin another Raspberry Pi based project soon.
+To a lot of people, this sort of thing doesn’t seem like much and in many ways they would be right. For me however, building, installing and maintaining my own publicly available minecraft server was some of the most fun I’ve had with computers in as long as I can remember, and I hope to begin another Raspberry Pi based project soon.
 
 You really have to admire the whole idea of the Raspberry Pi. They are brilliantly cheap, low power servers and whilst I may not have learned much about coding with them so far, I sure have learned a lot about the world outside of Windows, and just how much you can get out of very low priced hardware. 
 The Pi represents a great deal of opportunity for all sorts of people with the ideas for all sorts of projects. I implore you to think of your own and give it a go, you won’t regret it.
