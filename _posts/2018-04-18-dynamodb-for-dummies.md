@@ -7,7 +7,7 @@ I've been been working with [DynamoDB](https://aws.amazon.com/dynamodb/) for a w
 
 What is DynamoDB? It's a data storage system built and provided by Amazon. It's a NoSQL system which means it doesn't work like conventional database systems you might be familar with such as MySQL, MariaDB or SQL Server. It has more in common with MongoDB.
 
-The first difference is you can't host your own DynamoDB server - you have to set it up via Amazon Web Services and access/pay for it via Amazon directly.
+The first difference is you can't host your own DynamoDB server - you have to set it up via [Amazon Web Services](https://aws.amazon.com/) and access/pay for it via [Amazon](https://en.wikipedia.org/wiki/Amazon_(company)) directly.
 
 The second, larger difference is that it doesn't store data in the same relational manner you may have used before. The only part you have to define about the schema ahead of time is the primary key, which at it's most basic can simply be one field called the **Hash or Partition Key**. If you define this each record on your table must have a unique instance of this value and you can only select objects directly via this key, or search the entire table for objects by other values on table rows. This is known as a table scan and can cost you more money than nessary as Amazon charge for reads, writes and total storage used in DynamoDB - it's far more efficient for your wallet if searches are optimised and they will be faster as well.
 
