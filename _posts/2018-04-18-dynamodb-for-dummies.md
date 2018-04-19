@@ -41,11 +41,15 @@ The concept of a schema is completely different, and I can insert a record with 
 
 In SQL, you might be used to searching on any column in any way. You would expect to be able to search on non primary key values such as `age` and sort by it with something like the following query:
 
+<br>
+
 ```sql
 SELECT * FROM USERS
 WHERE AGE < 30
 ORDER BY AGE
 ```
+
+<br>
 
 This would return the following data if applies to the SQL table:
 
