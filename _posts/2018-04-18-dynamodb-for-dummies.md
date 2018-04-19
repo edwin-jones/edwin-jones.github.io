@@ -13,25 +13,25 @@ The second, larger difference is that it doesn't store data in the same relation
 
 Once you have defined your hash key, each record in the table can be completely different. Let's imagine I had a table called users that had an integer as the primary key or record identifier. In a normal SQL database I'd also have to define the kind of data I'd want to store for every record - if I wanted to store the user's name and age I'd have to define that ahead of time like so:
 
-
+<br>
 | Id (Key)  | Name          | Age   |
 | --------- |-------------  | ----- |
 | 1         | John          |    16 |
 | 2         | Sarah         |    22 |
 | 3         | Bob           |    56 |
-
+<br>
 
 If I wanted to add a new field to one record, say to store a user's favorite color, I'd have to update the schema. Depending on my database system I may have to give a default value or even update every existing record.
 
 In dynamo things work differently. Each record can have completely different data as long as it has a unique key, like so:
 
-
+<br>
 | Id (Partition Key)  | Name          | Age   | Favorite Color    |
 | ---------         | ------------- | ----- | ----------------- |
 | 1                 | John          |    16 | Green             |
 | 2                 |               |       | Blue              |
 | 3                 | Bob           |    56 |                   |
-
+<br>
 
 The concept of a schema is completely different, and I can insert a record with completely different fields to those that came before it without updating the table definition in any way. This is a powerful feature for storing data in a system that is still growing where you are unsure as to what exactly you will need to store in the future. This kind of loosely defined data template storage is known as a [document store.](https://en.wikipedia.org/wiki/Document-oriented_database)
 
@@ -45,16 +45,16 @@ ORDER BY AGE
 
 This would return the following data if applies to the SQL table:
 
-
+<br>
 | Id (Parition Key)     | Name          | Age   |
 | ---------             |-------------| -----|
 | 1                     | John          |    16 |
 | 2                     | Sarah         |    22 |
-
+<br>
 
 I would not be able to do the same from the DynamoDB table. I'd have to select every record and then filter it. To get a more performant search I'd need to define a secondary key, known in Dynamo as the *Range* or *Sort Key*. If you define one of these, each record has to be unique on the Partition Key AND the Sort Key as shown below:
 
-
+<br>
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
 | ---------           |-------------                  |-----|----------------- |
 | 1                   | John          |    16           | Green                     |
@@ -62,22 +62,22 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 | 3                   | Sarah         |    56           | Black                     |
 | 3                   | Smith         |    99           |                           |
 | 4                   | Bob           |    56           | Grey                      |
-
+<br>
 
 As you can see, we now have records with the same partition key and the same name but each record has a different combination of both. They are also both mandatory if they have been defined. This is known as a *composite primary key* or *hash-range key*. We can now sort/query by the sort key but not by any other values, not even the partition key itself unless we want to do an expensive full table scan. To understand how this works, it's important to understand how Dynamo stores data under the hood. It stores data in locations per *partition key*, and then orders everything in that partition by the *sort key*. Without the partition key you aren't going to be able to access any data at all. I could however, now search for each item with and ID of 3 and an age above 10/below 60. This would return the following data:
 
-
+<br>
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
 | ---------           |-------------                  |-----|----------------- |
 | 3                   | Sarah         |    56           | Black                     |
 | 3                   | Smith         |    99           |                           |
-
+<br>
 
 Most people will want to sort and search through their data on more than one field. How can we achieve this? Dynamo provides two options to do do, known as *secondary indexes.* These are similar to what you may have come across as an index in a sql database but slightly different.
 
 The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html) This allows you define another key that you pair with the same primary key to sort by. You are allowed up to five of these on each table. They always include the *sort key* from the original table as this is how they link back to the original record(s):
 
-
+<br>
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
 | ---------           |-------------                  |-----|
 | 1                   | John                            |    16           | 
@@ -85,22 +85,22 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 | 3                   | Sarah                           |    56           | 
 | 3                   | John                           |    99           | 
 | 4                   | Bob                             |    56           | 
-
+<br>
 
 Now we could also sort and filter on name which would return the following data:
 
-
+<br>
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  | 
 | ---------           |-------------                  |-----|
 | 1                   | John                            |    16 |
 | 3                   | John                           |    99 |
-
+<br>
 
 The limitations of the *Local Secondary Index* are that they MUST be defined when the table is created and cannot be deleted afterwards so you have to plan ahead to use them. There is also a size limit per *partition key* of 10 GB so you can't store too much data under one key. A *Local Secondary Index* is updated when the main table is, and consumes any throughput or provisioning limits you have set on that table. You can request for it to be eventually consistent, meaning that they may not match up exactly to the data in the table at the current moment in time but will always "catch up" eventually.
 
 The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) You can define these at any point after you have created a table and they act in most ways like a copy of the table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
 
-
+<br>
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
 | ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
@@ -108,16 +108,16 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 | 3                   | Sarah                           | Black                     |
 | 3                   | John                             |Blue                     |
 | 4                   | John                              |Grey                      |
-
+<br>
 
 We could now search for all records with the name "John" with a favourite color beginning with 'B' which would return the following data:
 
-
+<br>
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
 | ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
 | 3                   | John                             |Blue                     |
-
+<br>
 
 The downside to this is that Global Secondary indexes use more resources than local ones, and cost a bit more (but still far less than full table scans). You can only retrieve the columns defined in the Global Secondary Index and cannot ask for columns from the main table like you can with a Local Secondary Index. They are also **only** eventually consistent, meaning you can not guarantee data you retrieve is completely up to date. [Just Eat have a good article on how to use them effectively.](https://tech.just-eat.com/2014/03/19/using-dynamodb-global-secondary-indexes/)
 
