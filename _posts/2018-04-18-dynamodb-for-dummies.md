@@ -51,7 +51,7 @@ ORDER BY AGE
 
 <br>
 
-This would return the following data if applies to the SQL table:
+This would return the following data:
 
 <br>
 
