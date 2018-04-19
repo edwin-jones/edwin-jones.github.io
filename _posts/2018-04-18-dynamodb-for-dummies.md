@@ -14,7 +14,7 @@ The second, larger difference is that it doesn't store data in the same relation
 Once you have defined your hash key, each record in the table can be completely different. Let's imagine I had a table called users that had an integer as the primary key or record identifier. In a normal SQL database I'd also have to define the kind of data I'd want to store for every record - if I wanted to store the user's name and age I'd have to define that ahead of time like so:
 
 | Id (Key)  | Name          | Age   |
-| --------- |:-------------:| -----:|
+| --------- |-------------  | ----- |
 | 1         | John          |    16 |
 | 2         | Sarah         |    22 |
 | 3         | Bob           |    56 |
@@ -24,7 +24,7 @@ If I wanted to add a new field to one record, say to store a user's favorite col
 In dynamo things work differently. Each record can have completely different data as long as it has a unique key, like so:
 
 | Id (Partition Key)  | Name          | Age   | Favorite Color    |
-| ---------         |:-------------:|:-----:|-----------------: |
+| ---------         | ------------- | ----- | ----------------- |
 | 1                 | John          |    16 | Green             |
 | 2                 |               |       | Blue              |
 | 3                 | Bob           |    56 |                   |
@@ -43,7 +43,7 @@ ORDER BY AGE
 This would return the following data if applies to the SQL table:
 
 | Id (Parition Key)     | Name          | Age   |
-| ---------             |:-------------:| -----:|
+| ---------             |-------------| -----|
 | 1                     | John          |    16 |
 | 2                     | Sarah         |    22 |
 
@@ -52,7 +52,7 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 
 
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
-| ---------           |:-------------:                  |:-----:|-----------------: |
+| ---------           |-------------                  |-----|----------------- |
 | 1                   | John          |    16           | Green                     |
 | 2                   |               |    12           |                           |
 | 3                   | Sarah         |    56           | Black                     |
@@ -63,7 +63,7 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 As you can see, we now have records with the same partition key and the same name but each record has a different combination of both. They are also both mandatory if they have been defined. This is known as a *composite primary key* or *hash-range key*. We can now sort/query by the sort key but not by any other values, not even the partition key itself unless we want to do an expensive full table scan. To understand how this works, it's important to understand how Dynamo stores data under the hood. It stores data in locations per *partition key*, and then orders everything in that partition by the *sort key*. Without the partition key you aren't going to be able to access any data at all. I could however, now search for each item with and ID of 3 and an age above 10/below 60. This would return the following data:
 
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
-| ---------           |:-------------:                  |:-----:|-----------------: |
+| ---------           |-------------                  |-----|----------------- |
 | 3                   | Sarah         |    56           | Black                     |
 | 3                   | Smith         |    99           |                           |
 
@@ -72,7 +72,7 @@ Most people will want to sort and search through their data on more than one fie
 The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html) This allows you define another key that you pair with the same primary key to sort by. You are allowed up to five of these on each table. They always include the *sort key* from the original table as this is how they link back to the original record(s):
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
-| ---------           |:-------------:                  |-----:|
+| ---------           |-------------                  |-----|
 | 1                   | John                            |    16           | 
 | 2                   | Sarah                                |    12             |
 | 3                   | Sarah                           |    56           | 
@@ -82,7 +82,7 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 Now we could also sort and filter on name which would return the following data:
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  | 
-| ---------           |:-------------:                  |-----:|
+| ---------           |-------------                  |-----|
 | 1                   | John                            |    16 |
 | 3                   | John                           |    99 |
 
@@ -92,7 +92,7 @@ The limitations of the *Local Secondary Index* are that they MUST be defined whe
 The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) You can define these at any point after you have created a table and they act in most ways like a copy of the table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
 
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
-| ---------           |:-------------:                  |-----------------: |
+| ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
 | 2                   | Joe                              |Blue                      |
 | 3                   | Sarah                           | Black                     |
@@ -102,7 +102,7 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 We could now search for all records with the name "John" with a favourite color beginning with 'B' which would return the following data:
 
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
-| ---------           |:-------------:                  |-----------------: |
+| ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
 | 3                   | John                             |Blue                     |
 
