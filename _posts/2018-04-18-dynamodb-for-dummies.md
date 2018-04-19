@@ -13,15 +13,18 @@ The second, larger difference is that it doesn't store data in the same relation
 
 Once you have defined your hash key, each record in the table can be completely different. Let's imagine I had a table called users that had an integer as the primary key or record identifier. In a normal SQL database I'd also have to define the kind of data I'd want to store for every record - if I wanted to store the user's name and age I'd have to define that ahead of time like so:
 
+
 | Id (Key)  | Name          | Age   |
 | --------- |-------------  | ----- |
 | 1         | John          |    16 |
 | 2         | Sarah         |    22 |
 | 3         | Bob           |    56 |
 
+
 If I wanted to add a new field to one record, say to store a user's favorite color, I'd have to update the schema. Depending on my database system I may have to give a default value or even update every existing record.
 
 In dynamo things work differently. Each record can have completely different data as long as it has a unique key, like so:
+
 
 | Id (Partition Key)  | Name          | Age   | Favorite Color    |
 | ---------         | ------------- | ----- | ----------------- |
@@ -41,6 +44,7 @@ ORDER BY AGE
 ```
 
 This would return the following data if applies to the SQL table:
+
 
 | Id (Parition Key)     | Name          | Age   |
 | ---------             |-------------| -----|
@@ -62,14 +66,17 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 
 As you can see, we now have records with the same partition key and the same name but each record has a different combination of both. They are also both mandatory if they have been defined. This is known as a *composite primary key* or *hash-range key*. We can now sort/query by the sort key but not by any other values, not even the partition key itself unless we want to do an expensive full table scan. To understand how this works, it's important to understand how Dynamo stores data under the hood. It stores data in locations per *partition key*, and then orders everything in that partition by the *sort key*. Without the partition key you aren't going to be able to access any data at all. I could however, now search for each item with and ID of 3 and an age above 10/below 60. This would return the following data:
 
+
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
 | ---------           |-------------                  |-----|----------------- |
 | 3                   | Sarah         |    56           | Black                     |
 | 3                   | Smith         |    99           |                           |
 
+
 Most people will want to sort and search through their data on more than one field. How can we achieve this? Dynamo provides two options to do do, known as *secondary indexes.* These are similar to what you may have come across as an index in a sql database but slightly different.
 
 The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html) This allows you define another key that you pair with the same primary key to sort by. You are allowed up to five of these on each table. They always include the *sort key* from the original table as this is how they link back to the original record(s):
+
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
 | ---------           |-------------                  |-----|
@@ -79,7 +86,9 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 | 3                   | John                           |    99           | 
 | 4                   | Bob                             |    56           | 
 
+
 Now we could also sort and filter on name which would return the following data:
+
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  | 
 | ---------           |-------------                  |-----|
@@ -91,6 +100,7 @@ The limitations of the *Local Secondary Index* are that they MUST be defined whe
 
 The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) You can define these at any point after you have created a table and they act in most ways like a copy of the table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
 
+
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
 | ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
@@ -99,15 +109,20 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 | 3                   | John                             |Blue                     |
 | 4                   | John                              |Grey                      |
 
+
 We could now search for all records with the name "John" with a favourite color beginning with 'B' which would return the following data:
+
 
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
 | ---------           |-------------                  |----------------- |
 | 1                   | John                            | Black                     |
 | 3                   | John                             |Blue                     |
 
+
 The downside to this is that Global Secondary indexes use more resources than local ones, and cost a bit more (but still far less than full table scans). You can only retrieve the columns defined in the Global Secondary Index and cannot ask for columns from the main table like you can with a Local Secondary Index. They are also **only** eventually consistent, meaning you can not guarantee data you retrieve is completely up to date. [Just Eat have a good article on how to use them effectively.](https://tech.just-eat.com/2014/03/19/using-dynamodb-global-secondary-indexes/)
 
-You can also do a few other other neat tricks that a normal SQL database can't achieve. You can make records [expire/be deleted after a set amount of time](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) by defining one column to represent the amount of time to wait before expiry. This is really useful if you just want to store data for a few days or if you want to make sure you don't use up too much space on Dynamo and incur higher costs. [Optimistic concurrency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBMapper.OptimisticLocking.html) is built in - again all you need to do is define a column which holds a version number and dynamo will prevent other clients overwriting data while you are modifying it. This is very useful for high throughput situations where you don't want to block other clients from updating data in the table. You can also ask that any read be eventually consistent. This means data might not match exactly what was put into the table but retrieval will be faster. I prefer to demand consistency by default but there are many cases where this can be advantageous, especially those where you just need to get large amounts of data out as quickly as possible without worrying about individual records.
+You can also do a few other other neat tricks that a normal SQL database can't achieve. You can make records [expire/be deleted after a set amount of time](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) by defining one column to represent the amount of time to wait before expiry. This is really useful if you just want to store data for a few days or if you want to make sure you don't use up too much space on Dynamo and incur higher costs. [Optimistic concurrency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBMapper.OptimisticLocking.html) is built in - again all you need to do is define a column which holds a version number and dynamo will prevent other clients overwriting data while you are modifying it. 
+
+This is very useful for high throughput situations where you don't want to block other clients from updating data in the table. You can also ask that any read be eventually consistent. This means data might not match exactly what was put into the table but retrieval will be faster. I prefer to demand consistency by default but there are many cases where this can be advantageous, especially those where you just need to get large amounts of data out as quickly as possible without worrying about individual records.
 
 I hope this has helped explain to you the basics of DynamoDB and how to model some of your data! Hopefully some of you have some thoughts regarding my explanation and if you do please comment below.
