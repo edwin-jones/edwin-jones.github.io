@@ -120,7 +120,7 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 
 <br>
 
-| Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
+| Id (Projected Key)              | Name (Partition Key)   | FavoriteColor (GSI)                      |
 |:-------------------------------:|:----------------------:|:----------------------------------------:|
 | 1                               | John                   | Black                                    |
 | 2                               | Joe                    | Blue                                     |
@@ -134,7 +134,7 @@ We could now search for all records with the name "John" with a favourite color 
 
 <br>
 
-| Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
+| Id (Projected Key)              | Name (Partition Key)   | FavoriteColor (GSI)                      |
 |:-------------------------------:|:----------------------:|:----------------------------------------:|
 | 1                               | John                   | Black                                    |
 | 3                               | John                   | Blue                                     |
