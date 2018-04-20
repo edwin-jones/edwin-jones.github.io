@@ -16,7 +16,7 @@ Once you have defined your hash key, each record in the table can be completely 
 <br>
 
 | Id (Key)  | Name          | Age   |
-|:--------- |:-------------:|:----- |
+|:---------:|:-------------:|:-----:|
 | 1         | John          |    16 |
 | 2         | Sarah         |    22 |
 | 3         | Bob           |    56 |
