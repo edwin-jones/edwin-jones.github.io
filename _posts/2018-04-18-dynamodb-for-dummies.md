@@ -17,10 +17,9 @@ Once you have defined your hash key, each record in the table can be completely 
 <br>
 
 | Id (Key)  | Name          | Age   |
-| --------- |-------------  | ----- |
-| 1         | John          |    16 |
-| 2         | Sarah         |    22 |
-| 3         | Bob           |    56 |
+| 1         | John          | 16    |
+| 2         | Sarah         | 22    |
+| 3         | Bob           | 56    |
 
 <br>
 
@@ -31,10 +30,9 @@ In dynamo things work differently. Each record can have completely different dat
 <br>
 
 | Id (Partition Key)  | Name          | Age   | Favorite Color    |
-| ---------         | ------------- | ----- | ----------------- |
-| 1                 | John          |    16 | Green             |
-| 2                 |               |       | Blue              |
-| 3                 | Bob           |    56 |                   |
+| 1                   | John          | 16    | Green             |
+| 2                   |               |       | Blue              |
+| 3                   | Bob           | 56    |                   |
 
 <br>
 
@@ -57,9 +55,8 @@ This would return the following data:
 <br>
 
 | Id (Parition Key)     | Name          | Age   |
-| ---------             |-------------| -----|
-| 1                     | John          |    16 |
-| 2                     | Sarah         |    22 |
+| 1                     | John          | 16    |
+| 2                     | Sarah         | 22    |
 
 <br>
 
@@ -68,12 +65,11 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 <br>
 
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
-| ---------           |-------------                  |-----|----------------- |
-| 1                   | John          |    16           | Green                     |
-| 2                   |               |    12           |                           |
-| 3                   | Sarah         |    56           | Black                     |
-| 3                   | Smith         |    99           |                           |
-| 4                   | Bob           |    56           | Grey                      |
+| 1                   | John          | 16              | Green             |
+| 2                   |               | 12              |                   |
+| 3                   | Sarah         | 56              | Black             |
+| 3                   | Smith         | 99              |                   |
+| 4                   | Bob           | 56              | Grey              |
 
 <br>
 
