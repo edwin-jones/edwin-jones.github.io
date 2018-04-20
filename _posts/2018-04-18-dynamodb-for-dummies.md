@@ -16,7 +16,7 @@ Once you have defined your hash key, each record in the table can be completely 
 <br>
 
 | Id (Key)  | Name          | Age   |
-| --------- |-------------  | ----- |
+|:--------- |:-------------:|:----- |
 | 1         | John          |    16 |
 | 2         | Sarah         |    22 |
 | 3         | Bob           |    56 |
@@ -30,7 +30,7 @@ In dynamo things work differently. Each record can have completely different dat
 <br>
 
 | Id (Partition Key)  | Name          | Age   | Favorite Color    |
-| ---------         | ------------- | ----- | ----------------- |
+|:--------- |:-------------:|:----- |:-------------:|
 | 1                 | John          |    16 | Green             |
 | 2                 |               |       | Blue              |
 | 3                 | Bob           |    56 |                   |
@@ -56,7 +56,7 @@ This would return the following data:
 <br>
 
 | Id (Parition Key)     | Name          | Age   |
-| ---------             |-------------| -----|
+|:--------- |:-------------:|:----- |
 | 1                     | John          |    16 |
 | 2                     | Sarah         |    22 |
 
@@ -67,7 +67,7 @@ I would not be able to do the same from the DynamoDB table. I'd have to select e
 <br>
 
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
-| ---------           |-------------                  |-----|----------------- |
+|:--------- |:-------------:|:----- |:-------------:|
 | 1                   | John          |    16           | Green                     |
 | 2                   |               |    12           |                           |
 | 3                   | Sarah         |    56           | Black                     |
@@ -81,7 +81,7 @@ As you can see, we now have records with the same partition key and the same nam
 <br>
 
 | Id (Partition Key)  | Name          | Age (Sort Key)  | Favorite Color    |
-| ---------           |-------------                  |-----|----------------- |
+|:--------- |:-------------:|:----- |:-------------:|
 | 3                   | Sarah         |    56           | Black                     |
 | 3                   | Smith         |    99           |                           |
 
@@ -94,7 +94,7 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 <br>
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
-| ---------           |-------------                  |-----|
+|:--------- |:-------------:|:----- |
 | 1                   | John                            |    16           | 
 | 2                   | Sarah                                |    12             |
 | 3                   | Sarah                           |    56           | 
@@ -108,7 +108,7 @@ Now we could also sort and filter on name which would return the following data:
 <br>
 
 | Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  | 
-| ---------           |-------------                  |-----|
+|:--------- |:-------------:|:----- |:-------------:|
 | 1                   | John                            |    16 |
 | 3                   | John                           |    99 |
 
@@ -121,7 +121,7 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 <br>
 
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
-| ---------           |-------------                  |----------------- |
+|:--------- |:-------------:|:-------------:|
 | 1                   | John                            | Black                     |
 | 2                   | Joe                              |Blue                      |
 | 3                   | Sarah                           | Black                     |
@@ -135,7 +135,7 @@ We could now search for all records with the name "John" with a favourite color 
 <br>
 
 | Id (projected key from table)   | Name (Partition Key)   | FavoriteColor (Global Secondary Index)   |
-| ---------           |-------------                  |----------------- |
+|:--------- |:-------------:|:-------------:|
 | 1                   | John                            | Black                     |
 | 3                   | John                             |Blue                     |
 
