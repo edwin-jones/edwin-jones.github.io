@@ -13,7 +13,7 @@ layout: default
 
     <br>
 
-    {% if '2018' contains '2018' %}
+    {% if {{ "page.date" | date: "%Y" }} contains '2018' %}
 
     <!--disqus comments-->
     <div id="disqus_thread"></div>
