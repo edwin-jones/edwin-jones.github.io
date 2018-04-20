@@ -13,8 +13,10 @@ layout: default
 
     <br>
 
-    {% assign date_string =  page.date | date: "%Y" %}
-    {% if date_string contains '2018' %}
+    {% assign year_string =  page.date | date: "%Y" %}
+    {% assign year_int = year_string | times: 1 %}
+    
+    {% if year_int > 2017 %}
 
     <!--disqus comments-->
     <div id="disqus_thread"></div>
