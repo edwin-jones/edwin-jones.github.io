@@ -3,14 +3,17 @@ layout: default
 ---
 
 <div class="post">
+
     <h1 class="post-title">{{ page.title }}</h1>
     <span class="post-date">{{ page.date | date_to_string }}</span>
     
+    <div>
     {{ content }}
+    </div>
 
     <br>
 
-    {% if page.date contains '2018' %}
+    {% if '2018' contains '2018' %}
 
     <!--disqus comments-->
     <div id="disqus_thread"></div>
@@ -56,4 +59,5 @@ layout: default
     <!-- end of facebook comments-->
 
     {% endif %}
+
 </div>
