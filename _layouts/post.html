@@ -13,7 +13,9 @@ layout: default
 
     <br>
 
-    {% if {{ page.date | date: "%Y" }} contains '2018' %}
+    {% assign date_string =  page.date | date: "%Y" %}
+    {{date_string}}
+    {% if date_string contains '2018' %}
 
     <!--disqus comments-->
     <div id="disqus_thread"></div>
