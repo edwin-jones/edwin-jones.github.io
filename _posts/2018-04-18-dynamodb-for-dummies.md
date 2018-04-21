@@ -122,7 +122,7 @@ The other kind of index you can create is a [Global Secondary Index.](https://do
 
 <br>
 
-| Id (Projected Key)              | Age (Projected Key)   | Name (Partition Key)   | Favorite Color (Sort Key)|
+| Id (Projected)                  | Age (Projected)       | Name (Partition)       | Favorite Color (Sort)    |
 |:-------------------------------:|:---------------------:|:----------------------:|:------------------------:|
 | 1                               | 11                    | John                   | Black                    |
 | 2                               | 42                    | Joe                    | Blue                     |
@@ -136,7 +136,7 @@ We could now search for all records with the name "John" with a favourite color 
 
 <br>
 
-| Id (Projected Key)              | Age (Projected Key)   | Name (Partition Key)   | Favorite Color (Sort Key)|
+| Id (Projected)                  | Age (Projected)       | Name (Partition)       | Favorite Color (Sort)    |
 |:-------------------------------:|:---------------------:|:----------------------:|:------------------------:|
 | 1                               | 11                    | John                   | Black                    |
 | 3                               | 27                    | John                   | Blue                     |
