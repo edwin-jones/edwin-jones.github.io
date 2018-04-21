@@ -57,7 +57,7 @@ This would return the following data:
 
 <br>
 
-| Id (Parition Key)     | Name          | Age   |
+| Id (Key)              | Name          | Age   |
 |:---------------------:|:-------------:|:-----:|
 | 1                     | John          |    16 |
 | 2                     | Sarah         |    22 |
