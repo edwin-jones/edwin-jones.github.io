@@ -95,7 +95,7 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 
 <br>
 
-| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Projected Key)  |
+| Id (Partition Key)  | Name (Sort Key)                 | Age (Projected Key)  |
 |:-------------------:|:-------------------------------:|:--------------------:|
 | 1                   | John                            | 16                   |
 | 2                   | Sarah                           | 12                   |
@@ -105,11 +105,11 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 
 <br>
 
-Now we could now search for records with and `Id` of 3 and the `Name` 'John' which would return the following data:
+Now we could now search for records with an `Id` of 3 and the `Name` 'John' which would return the following data:
 
 <br>
 
-| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Projected Key)  |
+| Id (Partition Key)  | Name (Sort Key)                 | Age (Projected Key)  |
 |:-------------------:|:-------------------------------:|:--------------------:|
 | 3                   | John                            | 99                   |
 | 3                   | John                            | 56                   |
