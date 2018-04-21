@@ -118,7 +118,7 @@ Now we could now search for records with and `Id` of 3 and the `Name` 'John' whi
 
 The limitations of the *Local Secondary Index* are that they MUST be defined when the table is created and cannot be deleted afterwards so you have to plan ahead to use them. There is also a size limit per *partition key* of 10 GB so you can't store too much data under one key. A *Local Secondary Index* is updated when the main table is, and consumes any throughput or provisioning limits you have set on that table. You can set a local secondary index to be eventually or strongly consistent.
 
-The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) You can define these at any point after you have created a table and they act in most ways like a copy of the table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
+The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) They act in most ways like a copy of the original table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
 
 <br>
 
