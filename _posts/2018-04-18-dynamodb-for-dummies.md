@@ -95,13 +95,13 @@ The first option is known as a [Local Secondary Index.](https://docs.aws.amazon.
 
 <br>
 
-| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
-|:-------------------:|:-------------------------------:|:---------------:|
-| 1                   | John                            | 16              |
-| 2                   | Sarah                           | 12              |
-| 3                   | Sarah                           | 56              |
-| 3                   | John                            | 99              |
-| 3                   | John                            | 56              |
+| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Projected Key)  |
+|:-------------------:|:-------------------------------:|:--------------------:|
+| 1                   | John                            | 16                   |
+| 2                   | Sarah                           | 12                   |
+| 3                   | Sarah                           | 56                   |
+| 3                   | John                            | 99                   |
+| 3                   | John                            | 56                   |
 
 <br>
 
@@ -109,26 +109,26 @@ Now we could now search for records with and `Id` of 3 and the `Name` 'John' whi
 
 <br>
 
-| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Sort Key)  |
-|:-------------------:|:-------------------------------:|:---------------:|
-| 3                   | John                            | 99              |
-| 3                   | John                            | 56              |
+| Id (Partition Key)  | Name (Local Secondary Index)    | Age (Projected Key)  |
+|:-------------------:|:-------------------------------:|:--------------------:|
+| 3                   | John                            | 99                   |
+| 3                   | John                            | 56                   |
 
 <br>
 
 The limitations of the *Local Secondary Index* are that they MUST be defined when the table is created and cannot be deleted afterwards so you have to plan ahead to use them. There is also a size limit per *partition key* of 10 GB so you can't store too much data under one key. A *Local Secondary Index* is updated when the main table is, and consumes any throughput or provisioning limits you have set on that table. You can set a local secondary index to be eventually or strongly consistent.
 
-The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) They act in most ways like a copy of the original table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the Parition Key from the original table as this is how they link back to the original record(s):
+The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) They act in most ways like a copy of the original table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the primary key(s) from the original table as this is how they link back to the original record(s):
 
 <br>
 
-| Id (Projected Key)              | Name (Partition Key)   | Favorite Color (GSI)                     |
-|:-------------------------------:|:----------------------:|:----------------------------------------:|
-| 1                               | John                   | Black                                    |
-| 2                               | Joe                    | Blue                                     |
-| 3                               | Sarah                  | Black                                    |
-| 3                               | John                   | Blue                                     |
-| 4                               | John                   | Grey                                     |
+| Id (Projected Key)              | Age (Projected Key)   | Name (Partition Key)   | Favorite Color (Sort Key)|
+|:-------------------------------:|:---------------------:|:----------------------:|:------------------------:|
+| 1                               | 11                    | John                   | Black                    |
+| 2                               | 42                    | Joe                    | Blue                     |
+| 3                               | 55                    | Sarah                  | Black                    |
+| 3                               | 27                    | John                   | Blue                     |
+| 4                               | 73                    | John                   | Grey                     |
 
 <br>
 
@@ -136,10 +136,10 @@ We could now search for all records with the name "John" with a favourite color 
 
 <br>
 
-| Id (Projected Key)              | Name (Partition Key)   | Favorite Color (GSI)                     |
-|:-------------------------------:|:----------------------:|:----------------------------------------:|
-| 1                               | John                   | Black                                    |
-| 3                               | John                   | Blue                                     |
+| Id (Projected Key)              | Age (Projected Key)   | Name (Partition Key)   | Favorite Color (Sort Key)|
+|:-------------------------------:|:---------------------:|:----------------------:|:------------------------:|
+| 1                               | 11                    | John                   | Black                    |
+| 3                               | 27                    | John                   | Blue                     |
 
 <br>
 
