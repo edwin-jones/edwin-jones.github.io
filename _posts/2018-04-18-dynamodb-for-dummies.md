@@ -118,7 +118,7 @@ Now we could now search for records with and `Id` of 3 and the `Name` 'John' whi
 
 The limitations of the *Local Secondary Index* are that they MUST be defined when the table is created and cannot be deleted afterwards so you have to plan ahead to use them. There is also a size limit per *partition key* of 10 GB so you can't store too much data under one key. A *Local Secondary Index* is updated when the main table is, and consumes any throughput or provisioning limits you have set on that table. You can set a local secondary index to be eventually or strongly consistent.
 
-The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) They act in most ways like a copy of the original table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the primary key(s) from the original table as this is how they link back to the original record(s):
+The other kind of index you can create is a [Global Secondary Index.](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) They act in most ways like a copy of the original table with a different set of keys. They are charged and provisioned seperately to the original table. You are also allowed 5 of these per table. They always include the *primary key(s)* from the original table as this is how they link back to the original record(s):
 
 <br>
 
@@ -143,7 +143,7 @@ We could now search for all records with the name "John" with a favourite color 
 
 <br>
 
-The primary benefits of a global secondary index is that you can have a completely different partition key to the original table and you do not have to define a range key if you do not want to. You can define them long after you have created a table and delete them at any time.
+The primary benefits of a global secondary index are that you can have a completely different partition key to the original table and you do not have to define a range key if you do not want to. You can define them long after you have created a table and delete them at any time.
 
 The downside to them is that global secondary indexes use more resources than local ones, and cost a bit more (but still far less than full table scans). You can only retrieve the columns defined in the global secondary index and cannot ask for columns from the main table like you can with a local secondary index. They are also **only** eventually consistent, meaning you can not guarantee data you retrieve is completely up to date. [Just Eat have a good article on how to use them effectively.](https://tech.just-eat.com/2014/03/19/using-dynamodb-global-secondary-indexes/)
 
