@@ -64,7 +64,7 @@ This would return the following data:
 
 <br>
 
-I would not be able to do the same from the DynamoDB table. I'd have to select every record and then filter it. To get a more performant search I'd need to define a secondary key, known in dynamo as the *Range* or *Sort Key*. If you define one of these, each record has to be unique on the Partition Key AND the Sort Key as shown below:
+To do this in DynamoDB, I'd have to select every record and then filter them. To get a more performant search I'd need to define a secondary key, known in dynamo as the *Range* or *Sort Key*. If you define one of these, each record has to be unique on the Partition Key AND the Sort Key as shown below:
 
 <br>
 
