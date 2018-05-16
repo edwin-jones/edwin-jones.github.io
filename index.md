@@ -6,7 +6,7 @@ title: About
 Hi there! My name is Edwin, and I'm a professional software engineer with experience
 in C#, Python, HTML, Javascript, CSS, SQL, XML, C++ 
 and many more acronyms that are too numerous to fit onto one page. I love to
-tinker. I originally built site from scratch in ASP.NET to keep track of my random projects and host my rants. I've moved to [Jekyll](https://jekyllrb.com/) and [Github Pages](https://pages.github.com/) more recently to give it a more up to date feel. You can find the repository I'm using [here.](https://github.com/edwinj85/edwinj85.github.io)
+tinker. I originally built this site from scratch in ASP.NET to keep track of my random projects and host my rants. I then moved to [Jekyll](https://jekyllrb.com/) and [Github Pages](https://pages.github.com/) to give it a more up to date feel. You can find the repository I'm using [here.](https://github.com/edwinj85/edwinj85.github.io)
 
 I have previously spent my time writing for websites such as <a href="http://www.xboxic.com/">Xboxic</a>
 and <a href="http://parentalguidanceuk.blogspot.com/">Parental Guidance</a>, the
