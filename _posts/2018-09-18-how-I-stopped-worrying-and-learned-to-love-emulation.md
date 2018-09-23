@@ -150,4 +150,49 @@ The trick with his is the parsing that happens in `find_operation` - I try to fi
 
 Writing the unit tests doubled the time it took to write a class for each operation, but the amount of bugs they caught made them invaluable. They also meant that I could be sure that any change I made did not break the functionality of existing code elsewhere. If you want to write your own CHIP-8 emulator I would very much recommend testing your code in a similar fashion.
 
-Now I had a raw bytes, a cpu, opcodes and a way to map the binary to the opcodes. What I needed now was a renderer. This turned out to be pretty easy 
+Now I had a raw bytes, a cpu, opcodes and a way to map the binary to the opcodes. What I needed now was a renderer. Writing a simple renderer in pygame that drew an all black screen and then drew white sprites over that was easy enough, but sadly I hadn't quote implemented the single draw opcode properly. I figured this out by creating a test pattern shown below:
+
+
+![renderer test]({{ site.baseurl }}/images/rantimages/chip8_render_test.png)
+
+It didn't look like this at first as I had incorrectly implemented the opcode - among other things I had used the raw values in the opcode for my x and y co-ordinates rather than using the registers "pointed at" by those values. Yes, the good old *forgot to dereference a pointer* error. Sigh.
+
+
+The good news is that by writing the renderer test it was easier to track down the bug, and I soon had it somewhat working. I found a useful [test ROM](https://slack-files.com/T3CH37TNX-F3RF5KT43-0fb93dbd1f) to confirm that the emulator was working correctly. [(you can see the documentation or it here)](https://slack-files.com/T3CH37TNX-F3RKEUKL4-b05ab4930d) but I was getting strange output like shown below:
+
+**ADD ERROR E01 IMAGE HERE**
+
+I was scratching my head for a while but after looking at the documentation I could see which opcodes were failing but I wasn't sure why. To fix this, I had to take a step back and write my own debugger that allowed me to run the program step by step and print all the values on screen so I could see where things were going wrong. It looks like this:
+
+![renderer test]({{ site.baseurl }}/images/rantimages/chip8_debugger.png)
+
+It took a little time to figure out the simplest way to write a debugger and implement it but it was more than worth the effort. Like my unit tests and the test rom, I consider the debugger a crucial part of building the emulator and it sped fixing errors up immeasurably.
+
+After stepping through each error the test rom through up I found that the basic font of the Chip8 wasn't working. I hand crafted a fresh test ROM byte by byte with a hex editor to print each character stored in the font, then used my debugger to loop through it. 
+
+*debugger pic here*
+
+
+It turned out my font loading code was broken and looking at the wrong addresses. Once this was fixed, the test ROM started working. It's hard to explain how happy just seeing this made me:
+
+
+It's silly, but it meant the emulator was mostly working! In my excitement I booted up a full phat game (space invaders) and was overjoyed to see the awesome title screen run:
+
+
+**show space invaders pic**
+
+Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly (a chip 8 runs best at roughly ~500mhz) and the drawing operations being rather slow to begin with. I looked up some footage of other people's emulators and when I saw the same oddness I breathed a sigh of relief.
+
+<div class="video-container">
+<iframe src="https://www.youtube.com/watch?reload=9&v=NVd5vOiGhNU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+Sound was easy enough to implement - the chip 8 emits a beep when the sound delay counter/register is non zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was non zero which had the desired effect.
+
+Input was slightly more complicated but not much and I ended up just using the existing pygame libraries for that. Once I put it all together I could finally play space invaders and other chip 8 games like pong and tetris. Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself.
+
+** show images of games? **
+
+I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are egging me on to build a game boy emulator which I am seriously considering doing as soon as I can find the time.
+
+Building this emulator might seem like a simple enough project, but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend a lot of time planning and reading before coding so I felt this was a nice way to stretch my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would very much recommend it as a fun, achievable project to learn the basics.
