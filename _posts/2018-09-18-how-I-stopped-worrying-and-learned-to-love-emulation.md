@@ -7,9 +7,9 @@ Emulators fancinate me. The idea that you could run a computer within another co
 
 I've wanted to dabble in writing my own emulator for a long time but in earlier years I lacked confidence and more recently I just didn't feel I had the time. After watching a colleague of mine at [Mediatonic](https://www.mediatonicgames.com/) write his own working [NES emulator from scratch](https://bitbucket.org/gamezer0/nesemu/raw/64d3b73167568a391e69ef189fc1dc9b4eb395e9/doc/Kike%20Alcor%20-%20Creating%20a%20NES%20emulator%20v2.pdf) I felt I needed to try again. After gently encouragement from other colleagues I thought what the heck, I'd give it a try.
 
-The next question was...to emulate what? The NES project was quite daunting and I wanted something I simpler and compact so I wouldn't be tempted to give up. It turns out that there is a really good starter project for everybody who wants to try their hand and emulation and it's called the [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8).
+The next question was...what to emulate? The NES project was quite daunting and I wanted something I simpler and compact so I wouldn't be tempted to give up. It turns out that there is a really good starter project for everybody who wants to try their hand and emulation and it's called the [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8).
 
-The CHIP-8 was never a real computer but that's what makes it fancinating. Long before most other games sytems it was a virtual machine for 8 bit computers way back in the 1970s. This means there is no real hardware to attempt to emulate and quite a simple specification to implement as the CHIP-8 only has 35 [opcodes](https://en.wikipedia.org/wiki/Opcode), one of which is generally ignored anyway as it's a hardware specific one for the [RCA 1802](https://en.wikipedia.org/wiki/RCA_1802). You still have all the problems to solve of loading binary files, parsing opcodes and data from those bytes and running them on virtual hardware but you don't have a lot of the other baggage that comes with trying to write emulators for real hardware. The game was afoot.
+The CHIP-8 was never a real computer but that's what makes it fascinating. Long before most other games systems it was a virtual machine for 8 bit computers way back in the 1970s. This means there is no real hardware to attempt to emulate and quite a simple specification to implement as the CHIP-8 only has 35 [opcodes](https://en.wikipedia.org/wiki/Opcode), one of which is generally ignored anyway as it's a hardware specific one for the [RCA 1802](https://en.wikipedia.org/wiki/RCA_1802). You still have all the problems to solve of loading binary files, parsing opcodes and data from those bytes and running them on virtual hardware but you don't have a lot of the other baggage that comes with trying to write emulators for real hardware. The game was afoot.
 
 Next, I needed to choose some tech to help me build my own version. I read tutorials that used [C#](https://blog.dantup.com/2016/06/building-a-chip-8-interpreter-in-csharp/) and [C++](http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/) but both seemed a bit heavy weight for what I wanted to do and seemed to be platform specific. I wanted something simple that would handle drawing to screen, handling input and work on things other than a windows PC with a minimum of fuss. The most sensible option stood out from the rest: [Pygame.](https://www.pygame.org/wiki/about)
 
@@ -30,7 +30,7 @@ The basic CHIP-8 specifications:
 
 This part is pretty simpler and was easy to set up. The next step was figuring out how to parse the raw binary from a rom file and turn that into instructions for the CPU. The CHIP-8 has a strange opcode definition in that each opcode if a 16 bit/2 byte value that contains the instruction and the data for that instruction. This would be simple enough were it not for the fact that each apart from the first four bits, each following [nibble](https://en.wikipedia.org/wiki/Nibble) can be an indentifier for the instruction or data for it depending on the instruction it maps to For instance, the opcode **0x00E0** means *clear the screen* but opcode **0x1234** means *jump to address 0x234.*
 
- I had to write a parsing system that would map each opcode to a corresponding logical operation. The first part of the problem was how to turn a set of bytes into seperate values so that if an opcode contained data, I could get at that data. I could have used binary operators but it seemed cleaner to make a class that took in the byte value and exposed the associated nibbles as attributes, like so:
+ I had to write a parsing system that would map each opcode to a corresponding logical operation. The first part of the problem was how to turn a set of bytes into separate values so that if an opcode contained data, I could get at that data. I could have used binary operators but it seemed cleaner to make a class that took in the byte value and exposed the associated nibbles as attributes, like so:
 
  ```python
 "This module defines an opcode class for parsing raw words into instructions and data"
@@ -146,7 +146,7 @@ class OperationMapper():
         raise KeyError(f"Opcode {word:#06x} not present in list of valid operations")
  ```
 
-The trick with his is the parsing that happens in `find_operation` - I try to find the opcodes with the most nibbles that are identifiers first, then I slowly go through to more simple ones that may only use two nibbbles and finally check the ones that are only identified by their leading nibble. If an operation can't be found I throw an exception. This is important as I spent the early period of the project mostly just writing opcodes with no working emulator to run them on, so I had several tests to confirm the opcodes did what they said they did and also that the mapper found the expect operation when given an opcode. I also had tests to make sure codes that should not map to an operation, didn't.
+The trick with his is the parsing that happens in `find_operation` - I try to find the opcodes with the most nibbles that are identifiers first, then I slowly go through to more simple ones that may only use two nibbles and finally check the ones that are only identified by their leading nibble. If an operation can't be found I throw an exception. This is important as I spent the early period of the project mostly just writing opcodes with no working emulator to run them on, so I had several tests to confirm the opcodes did what they said they did and also that the mapper found the expect operation when given an opcode. I also had tests to make sure codes that should not map to an operation, didn't.
 
 Writing the unit tests doubled the time it took to write a class for each operation, but the amount of bugs they caught made them invaluable. They also meant that I could be sure that any change I made did not break the functionality of existing code elsewhere. If you want to write your own CHIP-8 emulator I would very much recommend testing your code in a similar fashion.
 
@@ -172,14 +172,13 @@ After stepping through each error the test rom through up I found that the basic
 
 *debugger pic here*
 
-
 It turned out my font loading code was broken and looking at the wrong addresses. Once this was fixed, the test ROM started working. It's hard to explain how happy just seeing this made me:
 
 
 It's silly, but it meant the emulator was mostly working! In my excitement I booted up a full phat game (space invaders) and was overjoyed to see the awesome title screen run:
 
 
-**show space invaders pic**
+![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
 
 Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly (a chip 8 runs best at roughly ~500mhz) and the drawing operations being rather slow to begin with. I looked up some footage of other people's emulators and when I saw the same oddness I breathed a sigh of relief.
 
@@ -189,10 +188,10 @@ Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn'
 
 Sound was easy enough to implement - the chip 8 emits a beep when the sound delay counter/register is non zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was non zero which had the desired effect.
 
-Input was slightly more complicated but not much and I ended up just using the existing pygame libraries for that. Once I put it all together I could finally play space invaders and other chip 8 games like pong and tetris. Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself.
+Input was slightly more complicated but not much and I ended up just using the existing pygame libraries for that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself.
 
 ** show images of games? **
 
-I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are egging me on to build a game boy emulator which I am seriously considering doing as soon as I can find the time.
+I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are egging me on to build a [game boy](https://en.wikipedia.org/wiki/Game_Boy) emulator which I am seriously considering doing as soon as I can find the time.
 
-Building this emulator might seem like a simple enough project, but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend a lot of time planning and reading before coding so I felt this was a nice way to stretch my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would very much recommend it as a fun, achievable project to learn the basics.
+Building this emulator might seem like a simple enough task but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend a lot of time planning and reading before coding so I felt this was a nice way to stretch my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would very much recommend it as a fun, achievable project to learn the basics.
