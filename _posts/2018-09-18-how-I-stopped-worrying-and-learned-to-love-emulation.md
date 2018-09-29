@@ -198,7 +198,7 @@ Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn'
 
 Sound was easy enough to implement as the CHIP-8 just emits a beep when the sound counter/register is above zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was above zero which had the desired effect.
 
-Input was slightly more complicated so ended up just using the existing pygame api to handle that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself. For reference, this is how my emulator looks playing pong:
+Input was slightly more complicated so I ended up just using the existing pygame api to handle that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself. For reference, this is how my emulator looks playing pong:
 
 <br>
 ![pong]({{ site.baseurl }}/images/rantimages/pong.gif)
