@@ -32,6 +32,7 @@ This part is pretty simpler and was easy to set up. The next step was figuring o
 
  I had to write a parsing system that would map each opcode to a corresponding logical operation. The first part of the problem was how to turn a set of bytes into separate values so that if an opcode contained data, I could get at that data. I could have used binary operators but it seemed cleaner to make a class that took in the byte value and exposed the associated nibbles as attributes, like so:
 
+<br>
  ```python
 "This module defines an opcode class for parsing raw words into instructions and data"
 
@@ -61,12 +62,14 @@ class Opcode:
     def __str__(self):
         return hex(self.word)
  ```
+<br>
 
  Pretty simple eh? I wish I could take credit for this one but many CHIP-8 emulators solve the problem in a similar way.
 
 The next issues was how to map this *opcode* to an *operation*. Most other emulators I had looked at just used a giant switch statement, which seemed inelegant. Others suggested that function lookups would be a good idea but I felt that would be hard to test and a bit basic. I decided to write a class for each opcode that would change the state of an a cpu object as expected.
  I then wrote a mapper class that would take in the byte value of an opcode and return the related operation object. It looks like so:
 
+<br>
  ```python
 """
 This module defines a class that handles
@@ -145,6 +148,7 @@ class OperationMapper():
 
         raise KeyError(f"Opcode {word:#06x} not present in list of valid operations")
  ```
+<br>
 
 The trick with his is the parsing that happens in `find_operation` - I try to find the opcodes with the most nibbles that are identifiers first, then I slowly go through to more simple ones that may only use two nibbles and finally check the ones that are only identified by their leading nibble. If an operation can't be found I throw an exception. This is important as I spent the early period of the project mostly just writing opcodes with no working emulator to run them on, so I had several tests to confirm the opcodes did what they said they did and also that the mapper found the expect operation when given an opcode. I also had tests to make sure codes that should not map to an operation, didn't.
 
@@ -152,17 +156,23 @@ Writing the unit tests doubled the time it took to write a class for each operat
 
 Now I had a raw bytes, a cpu, opcodes and a way to map the binary to the opcodes. What I needed now was a renderer. Writing a simple renderer in pygame that drew an all black screen and then drew white sprites over that was easy enough, but sadly I hadn't quote implemented the single draw opcode properly. I figured this out by creating a test pattern shown below:
 
+<br>
 ![renderer test]({{ site.baseurl }}/images/rantimages/chip8_render_test.png)
+<br>
 
 It didn't look like this at first as I had incorrectly implemented the opcode - among other things I had used the raw values in the opcode for my x and y co-ordinates rather than using the registers "pointed at" by those values. Yes, the good old *forgot to dereference a pointer* error. Sigh.
 
 The good news is that by writing the renderer test it was easier to track down the bug, and I soon had it somewhat working. I found a useful [test ROM](https://slack-files.com/T3CH37TNX-F3RF5KT43-0fb93dbd1f) to confirm that the emulator was working correctly. [(you can see the documentation or it here)](https://slack-files.com/T3CH37TNX-F3RKEUKL4-b05ab4930d) but I was getting strange output like shown below:
 
+<br>
 ![failing tests]({{ site.baseurl }}/images/rantimages/chip-8-failing-test.png)
+<br>
 
 I was scratching my head for a while but after looking at the documentation I could see which opcodes were failing but I wasn't sure why. To fix this, I had to take a step back and write my own debugger that allowed me to run the program step by step and print all the values on screen so I could see where things were going wrong. It looks like this:
 
+<br>
 ![renderer test]({{ site.baseurl }}/images/rantimages/chip8_debugger.png)
+<br>
 
 It took a little time to figure out the simplest way to write a debugger and implement it but it was more than worth the effort. Like my unit tests and the test rom, I consider the debugger a crucial part of building the emulator and it sped fixing errors up immeasurably.
 
@@ -170,14 +180,19 @@ After stepping through each error the test rom through up I found that the basic
 
 It turned out my font loading code was broken and looking at the wrong addresses. Once this was fixed, the test ROM started working. It's hard to explain how happy just seeing this made me:
 
+<br>
 ![très bon]({{ site.baseurl }}/images/rantimages/bon-by-best-coder.png)
+<br>
 
 It's silly, but it meant the emulator was mostly working! In my excitement I booted up a full phat game (space invaders) and was overjoyed to see the awesome title screen run:
 
+<br>
 ![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
+<br>
 
 Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly (a chip 8 runs best at roughly ~500mhz) and the drawing operations being rather slow to begin with. I looked up some footage of other people's emulators and when I saw the same oddness I breathed a sigh of relief.
 
+<br>
 <iframe width="480" height="360" src="https://www.youtube.com/embed/NVd5vOiGhNU" frameborder="0" allow="encrypted-media" allowfullscreen>
 </iframe>
 <br>
