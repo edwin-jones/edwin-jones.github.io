@@ -152,7 +152,6 @@ Writing the unit tests doubled the time it took to write a class for each operat
 
 Now I had a raw bytes, a cpu, opcodes and a way to map the binary to the opcodes. What I needed now was a renderer. Writing a simple renderer in pygame that drew an all black screen and then drew white sprites over that was easy enough, but sadly I hadn't quote implemented the single draw opcode properly. I figured this out by creating a test pattern shown below:
 
-
 ![renderer test]({{ site.baseurl }}/images/rantimages/chip8_render_test.png)
 
 It didn't look like this at first as I had incorrectly implemented the opcode - among other things I had used the raw values in the opcode for my x and y co-ordinates rather than using the registers "pointed at" by those values. Yes, the good old *forgot to dereference a pointer* error. Sigh.
