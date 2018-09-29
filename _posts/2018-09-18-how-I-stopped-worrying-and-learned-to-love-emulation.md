@@ -157,10 +157,9 @@ Now I had a raw bytes, a cpu, opcodes and a way to map the binary to the opcodes
 
 It didn't look like this at first as I had incorrectly implemented the opcode - among other things I had used the raw values in the opcode for my x and y co-ordinates rather than using the registers "pointed at" by those values. Yes, the good old *forgot to dereference a pointer* error. Sigh.
 
-
 The good news is that by writing the renderer test it was easier to track down the bug, and I soon had it somewhat working. I found a useful [test ROM](https://slack-files.com/T3CH37TNX-F3RF5KT43-0fb93dbd1f) to confirm that the emulator was working correctly. [(you can see the documentation or it here)](https://slack-files.com/T3CH37TNX-F3RKEUKL4-b05ab4930d) but I was getting strange output like shown below:
 
-**ADD ERROR E01 IMAGE HERE**
+![failing tests]({{ site.baseurl }}/images/rantimages/chip-8-failing-test.png)
 
 I was scratching my head for a while but after looking at the documentation I could see which opcodes were failing but I wasn't sure why. To fix this, I had to take a step back and write my own debugger that allowed me to run the program step by step and print all the values on screen so I could see where things were going wrong. It looks like this:
 
@@ -170,13 +169,11 @@ It took a little time to figure out the simplest way to write a debugger and imp
 
 After stepping through each error the test rom through up I found that the basic font of the Chip8 wasn't working. I hand crafted a fresh test ROM byte by byte with a hex editor to print each character stored in the font, then used my debugger to loop through it. 
 
-*debugger pic here*
-
 It turned out my font loading code was broken and looking at the wrong addresses. Once this was fixed, the test ROM started working. It's hard to explain how happy just seeing this made me:
 
+![très bon]({{ site.baseurl }}/images/rantimages/bon-by-best-coder.png)
 
 It's silly, but it meant the emulator was mostly working! In my excitement I booted up a full phat game (space invaders) and was overjoyed to see the awesome title screen run:
-
 
 ![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
 
@@ -189,8 +186,6 @@ Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn'
 Sound was easy enough to implement - the chip 8 emits a beep when the sound delay counter/register is non zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was non zero which had the desired effect.
 
 Input was slightly more complicated but not much and I ended up just using the existing pygame libraries for that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself.
-
-** show images of games? **
 
 I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are egging me on to build a [game boy](https://en.wikipedia.org/wiki/Game_Boy) emulator which I am seriously considering doing as soon as I can find the time.
 
