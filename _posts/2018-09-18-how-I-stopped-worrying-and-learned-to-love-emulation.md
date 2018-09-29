@@ -199,8 +199,12 @@ Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn'
 
 Sound was easy enough to implement - the chip 8 emits a beep when the sound delay counter/register is non zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was non zero which had the desired effect.
 
-Input was slightly more complicated but not much and I ended up just using the existing pygame libraries for that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself.
+Input was slightly more complicated but not much and I ended up just using the existing pygame api to handle that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself. For reference, this is how my emulator looks playing pong:
 
-I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are egging me on to build a [game boy](https://en.wikipedia.org/wiki/Game_Boy) emulator which I am seriously considering doing as soon as I can find the time.
+<br>
+![pong]({{ site.baseurl }}/images/rantimages/pong.gif)
+<br>
+
+I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are now egging me on to build a [game boy](https://en.wikipedia.org/wiki/Game_Boy) emulator which I am seriously considering doing as soon as I can find the time.
 
 Building this emulator might seem like a simple enough task but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend a lot of time planning and reading before coding so I felt this was a nice way to stretch my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would very much recommend it as a fun, achievable project to learn the basics.
