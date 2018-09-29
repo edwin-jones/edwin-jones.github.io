@@ -178,9 +178,7 @@ It's silly, but it meant the emulator was mostly working! In my excitement I boo
 
 Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly (a chip 8 runs best at roughly ~500mhz) and the drawing operations being rather slow to begin with. I looked up some footage of other people's emulators and when I saw the same oddness I breathed a sigh of relief.
 
-<div class="video-container">
-<iframe src="https://www.youtube.com/watch?reload=9&v=NVd5vOiGhNU" frameborder="0" allowfullscreen></iframe>
-</div>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/NVd5vOiGhNU" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 
 Sound was easy enough to implement - the chip 8 emits a beep when the sound delay counter/register is non zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was non zero which had the desired effect.
 
