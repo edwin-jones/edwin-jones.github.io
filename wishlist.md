@@ -7,7 +7,7 @@ Hello all, this secret page is for my friends and family who regularly ask me wh
 
 This list is in no particular order.
 
- **Please note, I'd prefer e-books and digital items to physical ones if possible due to the fact my house is full and can't really fit more stuff in it, I read most things on my Amazon Kindle.**.
+ *Please note, I'd prefer e-books and digital items to physical ones if possible due to the fact my house is full and can't really fit more stuff in it, I read most things on my Amazon Kindle.*
 
 ### Amazon Prime
 
