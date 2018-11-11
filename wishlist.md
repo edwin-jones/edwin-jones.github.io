@@ -5,7 +5,7 @@ title: Wishlist
 
 Hello all, this secret page is for my friends and family who regularly ask me what I would like for birthdays, Christmas and more. Unless you want to buy me a gift, you probably want to head back to the [main page...](https://edwinjones.me.uk)
 
-This list is in no particular order or importance.
+This list is in no particular order.
 
  **Please note, I'd prefer e-books and digital items to physical ones if possible due to the fact my house is full and can't really fit more stuff in it, I read most things on my Amazon Kindle.**.
 
