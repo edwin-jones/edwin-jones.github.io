@@ -49,7 +49,10 @@ I have a paper version of a very out of date version of this book, but I hear it
 
 I'm always in need of vouchers for the following stores:
 
-1) [Amazon](https://www.amazon.co.uk/Giftcards-Giftvouchers-Vouchers-Birthday-Gifts/b?ie=UTF8&node=1571304031)
-2) [Steam](https://store.steampowered.com/digitalgiftcards/)
-3) [Sony](https://www.playstation.com/en-us/explore/playstationnetwork/psn-cards/)
-4) [Ikea](https://www.ikea.com/gb/en/customer-service/ikea-gift-cards/)
+* [Amazon](https://www.amazon.co.uk/Giftcards-Giftvouchers-Vouchers-Birthday-Gifts/b?ie=UTF8&node=1571304031)
+
+* [Steam](https://store.steampowered.com/digitalgiftcards/)
+
+* [Sony](https://www.playstation.com/en-us/explore/playstationnetwork/psn-cards/)
+
+* [Ikea](https://www.ikea.com/gb/en/customer-service/ikea-gift-cards/)
