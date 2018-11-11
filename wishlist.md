@@ -9,6 +9,12 @@ This list is in no particular order.
 
  *Please note, I'd prefer e-books and digital items to physical ones if possible due to the fact my house is full and can't really fit more stuff in it, I read most things on my Amazon Kindle.*
 
+### A raspberry pi TV hat
+
+Kim and I mostly watch IPTV as we don't have a digital TV receiver. [One of these](https://shop.pimoroni.com/products/raspberry-pi-tv-hat) would help us watch normal freeview channels.
+
+!["adapter"](https://cdn.shopify.com/s/files/1/0174/1800/products/770A9314_1024x1024_copy_1024x1024.jpg?v=1540013477 "adapter")
+
 ### Amazon Prime
 
 I order so many things from amazon that I really could do with [Amazon Prime.](https://www.amazon.co.uk/amazonprime) An amazon gift voucher to go toward this would be very helpful.
