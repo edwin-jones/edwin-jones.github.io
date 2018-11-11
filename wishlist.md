@@ -19,7 +19,7 @@ Try these online stores:
 
 [Halfords](https://www.halfords.com/)
 
-### An Ikea marcus chair (grey)
+### An ikea markus chair (grey)
 My current office chair is wearing out and it can be a bit uncomfortable when I'm working to use it for extended periods, and it's a faux leather material so it gets sweaty in summer. The [Ikea Markus](https://www.ikea.com/gb/en/products/chairs-stools-benches/office-chairs/markus-swivel-chair-vissle-dark-grey-art-30261152/) is a well reviewed mid range chair that I'd like to try.
 
 ![ikea marcus](https://www.ikea.com/gb/en/images/products/markus-swivel-chair-vissle-dark-grey__0324506_pe517017_s4.jpg "Ikea Marcus")
