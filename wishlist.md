@@ -47,7 +47,7 @@ I have a paper version of a very out of date version of this book, but I hear it
 
 ### Vouchers
 
-I'm always in need of vouchers for the following stores:
+I always appreciate vouchers for the following stores:
 
 * [Amazon](https://www.amazon.co.uk/Giftcards-Giftvouchers-Vouchers-Birthday-Gifts/b?ie=UTF8&node=1571304031)
 
