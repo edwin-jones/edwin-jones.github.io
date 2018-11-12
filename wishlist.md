@@ -41,7 +41,7 @@ I have [one of these](https://www.amazon.co.uk/dp/B013BNHROE/?coliid=ITQAEAL01ZU
 
 ### A proper electric razor
 
-I've been using disposable razors most of my life and I always end up cutting myself at some point. A nice rechargable electric razor from philips or similar would be awesome.
+A nice rechargeable electric razor from philips or similar would be awesome.
 
 ![razor](https://media.4rgos.it/i/Argos/6219534_R_Z001A?$Web$&$DefaultPDP768$ "razor")
 
