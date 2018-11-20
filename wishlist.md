@@ -29,6 +29,33 @@ Try these online stores:
 
 [Halfords](https://www.halfords.com/)
 
+### Running shoes
+
+My current running shoes are wearing out and are not long for this world. I am a size 11-12 depending on the store. I tend to overpronate as well.
+
+### Running shorts
+
+A good pair of running shorts with pockets would be ace. I'm roughly a 32" waist.
+
+### iPhone SE armband
+
+My current armband is wearing/worn out so I could do with a new one.
+
+### Jeans
+
+My M&S Jeans tend to be wearing out far faster than they should so a more
+hard wearing pair would be good for cycling and the like.
+
+### Nice shirts (M&S do good ones)
+
+Kim knows the ones I like, I'm a 15" ish collar.
+
+### V neck jumpers (M&S style)
+These are really useful for looking smart, but 
+my current ones have holes in... Brown/Grey/Navy
+are good options.
+
+
 ### An ikea markus chair (grey)
 My current office chair is wearing out and it can be a bit uncomfortable when I'm working to use it for extended periods, and it's a faux-leather material so it gets sweaty in summer. The [Ikea Markus](https://www.ikea.com/gb/en/products/chairs-stools-benches/office-chairs/markus-swivel-chair-vissle-dark-grey-art-30261152/) is a well reviewed mid-range chair that I'd like to try.
 
