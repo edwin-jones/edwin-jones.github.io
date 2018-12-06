@@ -11,7 +11,7 @@ This list is in no particular order.
 
 ### A raspberry pi TV hat
 
-Kim and I mostly watch IPTV as we don't have a digital TV receiver. [One of these](https://shop.pimoroni.com/products/raspberry-pi-tv-hat) would help us watch normal freeview channels.
+I mostly watch IPTV as we don't have a digital TV receiver. [One of these](https://shop.pimoroni.com/products/raspberry-pi-tv-hat) would help us watch normal freeview channels.
 
 !["adapter"](https://cdn.shopify.com/s/files/1/0174/1800/products/770A9314_1024x1024_copy_1024x1024.jpg?v=1540013477 "adapter")
 
@@ -41,20 +41,32 @@ A good pair of running shorts with pockets would be ace. I'm roughly a 32" waist
 
 My current armband is wearing/worn out so I could do with a new one.
 
+### A rechargeable Oral-B toothbrush
+
+I have a battery powered version currently.
+
 ### Jeans
 
-My M&S Jeans tend to be wearing out far faster than they should so a more
+My M&S jeans tend to be wearing out far faster than they should so a more
 hard wearing pair would be good for cycling and the like.
 
 ### Nice shirts (M&S do good ones)
 
 Kim knows the ones I like, I'm a 15" ish collar.
 
-### V neck jumpers (M&S style)
+### V neck pullovers (M&S style)
 These are really useful for looking smart, but 
 my current ones have holes in... Brown/Grey/Navy
 are good options.
 
+### A warm jumper
+I have one thick jumper for winter and you guessed it,
+it's wearing out. Something warm would help me on long cycles.
+
+### A warm ski jacket
+I love ski jackets as they tend to be water and wind proof.
+My current one is very thin and warn (it's fine with a jumper
+under it)
 
 ### An ikea markus chair (grey)
 My current office chair is wearing out and it can be a bit uncomfortable when I'm working to use it for extended periods, and it's a faux-leather material so it gets sweaty in summer. The [Ikea Markus](https://www.ikea.com/gb/en/products/chairs-stools-benches/office-chairs/markus-swivel-chair-vissle-dark-grey-art-30261152/) is a well reviewed mid-range chair that I'd like to try.
