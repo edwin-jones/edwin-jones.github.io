@@ -34,20 +34,25 @@ This part is pretty simple and was easy to set up. The next step was figuring ou
 
 <br>
  ```python
-"This module defines an opcode class for parsing raw words into instructions and data"
+"""
+This module defines an opcode class for parsing
+raw words into instructions and data
+"""
 
 from numpy import uint8 as byte
 from numpy import uint16
 
 class Opcode:
-    """This class represents the instructions and data of an opcode"""
+    """
+    This class represents the instructions and data of an opcode
+    """
 
     def __init__(self, word):
         """
         This class takes in a 2 byte value/word and parses the bytes
         to store them in different attributes for later use
         Args:
-            word: a 2 byte/16 bit value represent an opcode.
+            word: a 2 byte/16 bit value representing an opcode.
         """
 
         # We use bitwise-and with a mask to extract specific nibbles.
@@ -63,7 +68,8 @@ class Opcode:
         self.nn = word & 0x00FF
         self.n = word & 0x000F
 
-        # Where don't use the lower nibbles, bitshift right to get just the raw value
+        # Where don't use the lower nibbles, bitshift
+        # right to get just the raw value
         self.x = (word & 0x0F00) >> 8
 
         # Eg. we want 0x4 not 0x40
@@ -91,7 +97,10 @@ from pychip8.operations import *
 from pychip8.opcode import Opcode
 
 class OperationMapper():
-    "This class handles mapping a 16 bit opcode value to an operation object"
+    """
+    This class handles mapping a 16 bit opcode
+    value to an operation object
+    """
 
     def __init__(self):
         self._operations = {}
@@ -140,7 +149,10 @@ class OperationMapper():
 
 
     def find_operation(self, word):
-        "This method takes a 16 bit value representing an opcode and returns the related operation"
+        """
+        This method takes a 16 bit value representing an
+        opcode and returns the related operation
+        """
 
         opcode = Opcode(word)
 
@@ -158,7 +170,7 @@ class OperationMapper():
         if four_bit_key in self._operations:
             return self._operations[four_bit_key]
 
-        raise KeyError(f"Opcode {word:#06x} not present in list of valid operations")
+        raise KeyError(f"Opcode {word:#06x} is invalid")
  ```
 <br>
 
