@@ -13,7 +13,7 @@ The CHIP-8 was never a real computer but that's what makes it fascinating. Long 
 
 Next, I needed to choose some tech to help me build my own version of the CHIP-8. I read tutorials that used [C#](https://blog.dantup.com/2016/06/building-a-chip-8-interpreter-in-csharp/) and [C++](http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/) but both seemed a bit heavy weight for what I wanted to do and seemed to be platform specific. I wanted something simple that would handle drawing to screen, input and work on platforms other than a windows PC with a minimum of fuss. The most sensible option stood out from the rest: [Pygame.](https://www.pygame.org/wiki/about)
 
-For simple projects there is no easier way I have found to draw things on your monitor. I was going to find however, that dynamic languages have a few drawbacks when it comes to emulating things like [registers](https://en.wikipedia.org/wiki/Processor_register) and [framebuffers](https://en.wikipedia.org/wiki/Framebuffer). The most obvious problem was that Python has no byte type available by default. Thankfully the [NumPy](http://www.numpy.org/) library does define such types, so I decided to use that.
+For simple projects there is no easier way I have found to draw things on your monitor. I was going to find however, that dynamic languages have a few drawbacks when it comes to emulating things like [registers](https://en.wikipedia.org/wiki/Processor_register) and [framebuffers](https://en.wikipedia.org/wiki/Framebuffer). The most obvious problem was that Python has no byte type available by default. ~~Thankfully the [NumPy](http://www.numpy.org/) library does define such types, so I decided to use that.~~ It turns out the simplest way to deal with this is a bitmask to restrict integer values to the range of one or two bytes where required.
 
 Next I had to break down and understand the basic CHIP-8 specifications:
 
@@ -51,13 +51,13 @@ class Opcode:
         """
 
         # We use bitwise-and with a mask to extract specific nibbles.
-        self.word = uint16(word)
-        self.a = byte((word & 0xF000) >> 12) # we just want the most significant bits/nibble here so we bitshift right
-        self.nnn = uint16(word & 0x0FFF)
-        self.nn = byte(word & 0x00FF)
-        self.n = byte(word & 0x000F)
-        self.x = byte((word & 0x0F00) >> 8) # Where don't use the lower nibbles, bitshift right to get just the raw value
-        self.y = byte((word & 0x00F0) >> 4) # Eg. we want 0x4 not 0x40
+        self.word = word & 0xFFFF # a word should be no more than 16 bits
+        self.a = (word & 0xF000) >> 12 # we just want the most significant bits/nibble here so we bitshift right
+        self.nnn = word & 0x0FFF
+        self.nn = word & 0x00FF
+        self.n = word & 0x000F
+        self.x = (word & 0x0F00) >> 8 # Where don't use the lower nibbles, bitshift right to get just the raw value
+        self.y = (word & 0x00F0) >> 4 # Eg. we want 0x4 not 0x40
 
     def __str__(self):
         return hex(self.word)
@@ -127,6 +127,7 @@ class OperationMapper():
         self._operations[0xF33] = SaveXAsBcd()
         self._operations[0xF55] = SaveRegistersZeroToX()
         self._operations[0xF65] = LoadRegistersZeroToX()
+
 
     def find_operation(self, word):
         "This method takes a 16 bit value representing an opcode and returns the related operation"
