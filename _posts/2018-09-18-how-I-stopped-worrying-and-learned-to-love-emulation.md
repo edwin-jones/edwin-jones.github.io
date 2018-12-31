@@ -55,7 +55,7 @@ class Opcode:
             word: a 2 byte/16 bit value representing an opcode.
         """
 
-        # We use bitwise-and with a mask to extract specific nibbles.
+        # We use bitwise AND with a mask to extract specific nibbles.
 
         # a word should be no more than 16 bits
         self.word = word & 0xFFFF
