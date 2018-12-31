@@ -44,20 +44,30 @@ class Opcode:
 
     def __init__(self, word):
         """
-        This class takes in a 2 byte value/word and parses the bytes 
+        This class takes in a 2 byte value/word and parses the bytes
         to store them in different attributes for later use
         Args:
             word: a 2 byte/16 bit value represent an opcode.
         """
 
         # We use bitwise-and with a mask to extract specific nibbles.
-        self.word = word & 0xFFFF # a word should be no more than 16 bits
-        self.a = (word & 0xF000) >> 12 # we just want the most significant bits/nibble here so we bitshift right
+
+        # a word should be no more than 16 bits
+        self.word = word & 0xFFFF
+
+        # we just want the most significant bits/nibble
+        # here so we bitshift right
+        self.a = (word & 0xF000) >> 12
+
         self.nnn = word & 0x0FFF
         self.nn = word & 0x00FF
         self.n = word & 0x000F
-        self.x = (word & 0x0F00) >> 8 # Where don't use the lower nibbles, bitshift right to get just the raw value
-        self.y = (word & 0x00F0) >> 4 # Eg. we want 0x4 not 0x40
+
+        # Where don't use the lower nibbles, bitshift right to get just the raw value
+        self.x = (word & 0x0F00) >> 8
+
+        # Eg. we want 0x4 not 0x40
+        self.y = (word & 0x00F0) >> 4
 
     def __str__(self):
         return hex(self.word)
