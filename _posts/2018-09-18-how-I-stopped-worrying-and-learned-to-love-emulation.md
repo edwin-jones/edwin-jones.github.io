@@ -212,7 +212,7 @@ It's silly, but it meant the emulator was mostly working! In my excitement I imm
 ![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
 <br>
 
-Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly *(a chip 8 runs best at roughly ~500hz and I was running it at 60hz)* and the drawing operations being rather slow to begin with. I looked up some footage of other CHIP-8 emulators and when I saw the same oddness I breathed a sigh of relief.
+Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly *(a CHIP-8 runs best at roughly ~500hz and I was running it at 60hz)* and the drawing operations being rather slow to begin with. I looked up some footage of other CHIP-8 emulators and when I saw the same oddness I breathed a sigh of relief.
 
 <br>
 <iframe width="480" height="360" src="https://www.youtube.com/embed/NVd5vOiGhNU" frameborder="0" allow="encrypted-media" allowfullscreen>
