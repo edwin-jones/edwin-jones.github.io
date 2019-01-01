@@ -39,9 +39,6 @@ This module defines an opcode class for parsing
 raw words into instructions and data
 """
 
-from numpy import uint8 as byte
-from numpy import uint16
-
 class Opcode:
     """
     This class represents the instructions and data of an opcode
