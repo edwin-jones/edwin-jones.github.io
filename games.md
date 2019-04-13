@@ -31,7 +31,7 @@ On this game I worked with the UI team - primarily working on UI scripting with 
 
 [![BFH](https://upload.wikimedia.org/wikipedia/en/a/aa/Battlefield_Hardline.jpg)](https://en.wikipedia.org/wiki/Battlefield_Hardline)
 
-I helped to write several automation tests on this title for blackbox testing, via [C#.](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) I helped build and install the automation test farm for [Visceral Games](https://en.wikipedia.org/wiki/Visceral_Games) over in California. During this project I designed a small plugin for our in house telemetry website that logged what pages readers were looking at the most so we could prioritise development time more effectively.
+I helped to write several automation tests on this title for blackbox testing, via [C#.](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) I helped build and install the automation test farm for [Visceral Games](https://en.wikipedia.org/wiki/Visceral_Games) over in California. During this project I designed a small plugin for our in house telemetry website that logged which pages readers were looking at the most so we could prioritise development time more effectively.
 
 <br>
 
