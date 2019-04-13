@@ -11,7 +11,7 @@ Here you can find details of some of the games I have worked on previously.
 
 [![BF1](https://upload.wikimedia.org/wikipedia/en/f/fc/Battlefield_1_cover_art.jpg)](https://en.wikipedia.org/wiki/Battlefield_1)
 
-I helped write some tools for some of the vehicle animations alongside the artists on this title. I achieved this mostly with [Python](https://www.python.org/). It was quite fun to play around with the artist's amazing work and the old style vehicles of the WW1 era. 
+I helped write some tools for some of the vehicle animations alongside the artists on this title. I achieved this mostly with [Python.](https://en.wikipedia.org/wiki/Python_(programming_language)) It was quite fun to play around with the artist's amazing work and the old style vehicles of the WW1 era. 
 
 <br>
 
