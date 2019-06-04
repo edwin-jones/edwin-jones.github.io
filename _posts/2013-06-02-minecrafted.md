@@ -1,6 +1,8 @@
 ﻿---
 layout: post
 title:  Minecrafted
+redirect_from:
+  - /rants/minecrafted.aspx
 ---
 
 **UPDATE 28-10-2013 - Due to the fact I will be moving house at the end of the week
