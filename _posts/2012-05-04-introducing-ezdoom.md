@@ -16,7 +16,7 @@ which I can't recommend enough. It's one of the best Doom mods ever made. Enjoy!
 
 
 It's been a busy few weeks for me lately but I still wanted to make time to share
-with you something I have been working on for the last few weeks: <a href="https://github.com/edwin-jones/ezDoom/releases/download/1.0.1/ezDoom.Installer.msi">ezDoom!</a>
+with you something I have been working on for the last few weeks: <a href="https://github.com/edwin-jones/ezDoom/releases">ezDoom!</a>
 
 ![ezDoom]({{ site.baseurl }}/images/rantimages/ezDoom.png)
 
