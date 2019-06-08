@@ -3,18 +3,20 @@ layout: post
 title: Introducing ezDoom
 ---
 
+**UPDATE 2: As of 2019 I've had to change installation method due to how dropbox hosts files. I've added an MSI installer you can download via [github](https://github.com/edwin-jones/ezDoom/releases/download/1.0.1/ezDoom.Installer.msi) and fixed a few small bugs.**
+
 **UPDATE: ezDoom has been updated substantially as of August 2013. 
 These updates may require you to uninstall any previous
 versions of the program you may have. You can now select
 multiple PWADS and PK3 files to run with the game and the underlying engine has been
-shifted from <a href="http://zdoom.org/About">ZDoom</a> to <a href="http://www.osnanet.de/c.oelckers/gzdoom/about.html">GZDoom.</a>
+shifted from <a href="http://zdoom.org/About">ZDoom</a> to <a href="https://zdoom.org/wiki/GZDoom">GZDoom.</a>
 Mods you specify will be run in the order shown in the application so make sure you add them in the correct order if need be.
 These changes enable support for many more mods, including the awesome <a href="http://www.moddb.com/mods/brutal-doom">Brutal Doom</a>
 which I can't recommend enough. It's one of the best Doom mods ever made. Enjoy!**
 
 
 It's been a busy few weeks for me lately but I still wanted to make time to share
-with you something I have been working on for the last few weeks: <a href="https://github.com/edwinj85/ezDoom/releases/download/v1/ezDoom.zip">ezDoom!</a>
+with you something I have been working on for the last few weeks: <a href="https://github.com/edwin-jones/ezDoom/releases/download/1.0.1/ezDoom.Installer.msi">ezDoom!</a>
 
 ![ezDoom]({{ site.baseurl }}/images/rantimages/ezDoom.png)
 
