@@ -3,7 +3,7 @@ layout: post
 title: Introducing ezDoom
 ---
 
-**UPDATE 2: As of 2019 I've had to change installation method due to how dropbox hosts files. I've added an MSI installer you can download via [github](https://github.com/edwin-jones/ezDoom/releases/download/1.0.1/ezDoom.Installer.msi) and fixed a few small bugs.**
+**UPDATE 2: As of 2019 I've had to change the ezDoom installation method due to how dropbox hosts files. I've added an MSI installer you can download via [github](https://github.com/edwin-jones/ezDoom/releases) and fixed a few small bugs.**
 
 **UPDATE: ezDoom has been updated substantially as of August 2013. 
 These updates may require you to uninstall any previous
