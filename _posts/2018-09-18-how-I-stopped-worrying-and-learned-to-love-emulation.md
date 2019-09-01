@@ -9,9 +9,9 @@ I've wanted to dabble in writing my own emulator for a long time but in earlier 
 
 The next question was...what to emulate? The NES project was quite daunting and I wanted something simpler and compact so I wouldn't be tempted to give up. It turns out that there is a really good starter project for everybody who wants to try their hand and emulation and it's called the [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8).
 
-The CHIP-8 was never a real computer but that's what makes it fascinating. Long before most other games systems it was a virtual machine for 8 bit computers way back in the 1970s. This means there is no real hardware to attempt to emulate and quite a simple specification to implement as the CHIP-8 only has 35 [opcodes](https://en.wikipedia.org/wiki/Opcode), one of which is generally ignored anyway as it's a hardware specific one for the [RCA 1802](https://en.wikipedia.org/wiki/RCA_1802). You still have all the usual problems to solve of loading binary files, parsing opcodes and then running them on virtual hardware but you don't have a lot of the other baggage that comes with trying to write emulators for real hardware. The game was afoot.
+The CHIP-8 was never a real computer but that's what makes it fascinating. Long before most other games systems it was a virtual machine for 8 bit computers way back in the 1970s. This means there is no real hardware to attempt to emulate and quite a simple specification to implement as the CHIP-8 only has 35 [opcodes](https://en.wikipedia.org/wiki/Opcode), one of which is generally ignored anyway as it's a hardware specific one for the [RCA 1802](https://en.wikipedia.org/wiki/RCA_1802). You still have all the usual problems to solve of loading binary files, parsing opcodes and then running them on virtual hardware but you don't have the other baggage that comes with trying to write emulators for real hardware. The game was afoot.
 
-Next, I needed to choose some tech to help me build my own version of the CHIP-8. I read tutorials that used [C#](https://blog.dantup.com/2016/06/building-a-chip-8-interpreter-in-csharp/) and [C++](http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/) but both seemed a bit heavy weight for what I wanted to do and seemed to be platform specific. I wanted something simple that would handle drawing to screen, input and work on platforms other than a windows PC with a minimum of fuss. The most sensible option stood out from the rest: [Pygame.](https://www.pygame.org/wiki/about)
+Next, I needed to choose some tech to help me build my own version of the CHIP-8. I read tutorials that used [C#](https://blog.dantup.com/2016/06/building-a-chip-8-interpreter-in-csharp/) and [C++](http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/) but both seemed a bit heavy weight for what I wanted to do and seemed to be platform specific. I wanted something simple that would handle drawing to screen and work on platforms other than a windows PC with a minimum of fuss. The most sensible option stood out from the rest: [Pygame.](https://www.pygame.org/wiki/about)
 
 For simple projects there is no easier way I have found to draw things on your monitor. I was going to find however, that dynamic languages have a few drawbacks when it comes to emulating things like [registers](https://en.wikipedia.org/wiki/Processor_register) and [framebuffers](https://en.wikipedia.org/wiki/Framebuffer). The most obvious problem was that Python has no byte type available by default. ~~Thankfully the [NumPy](http://www.numpy.org/) library does define such types, so I decided to use that.~~ *It turns out the simplest way to deal with this is a bitmask to restrict integer values to the range of one or two bytes where required.*
 
@@ -28,9 +28,9 @@ Next I had to break down and understand the basic CHIP-8 specifications:
 * An 8 bit delay timer register
 * An 8 bit sound timer register (when above zero, a beep is made)
 
-This part is pretty simple and was easy to set up. The next step was figuring out how to parse the raw binary from a rom file and turn that into instructions for the CPU. The CHIP-8 has a strange opcode definition in that each opcode is a 16 bit/2 byte value that contains the instruction and the data for that instruction. This would be simple enough were it not for the fact that apart from the first four bits, each following [nibble](https://en.wikipedia.org/wiki/Nibble) can be an identifier for the instruction or data - depending on the instruction in question. For instance, the opcode **0x00E0** means *clear the screen* but opcode **0x1234** means *jump to address 0x234.*
+This part is pretty simple and was easy to set up. The next step was figuring out how to parse the raw binary from a rom file and turn that into instructions for the CPU. The CHIP-8 has a strange opcode definition in that each opcode is a 16 bit/2 byte value that contains the instruction and the data for that instruction. This would be simple enough were it not for the fact that apart from the first four bits, each following [nibble](https://en.wikipedia.org/wiki/Nibble) can be part of an instruction *or* data - depending on the instruction in question. For instance, the opcode **0x00E0** means *clear the screen* but opcode **0x1234** means *jump to address 0x234.*
 
- I had to write a parsing system that would map each opcode to a corresponding logical operation. The first part of the problem was how to turn a set of bytes into separate values so that if an opcode contained data, I could get at that data. I could have used binary operators every time but it seemed cleaner to make a class that took in the byte value and exposed the associated nibbles as attributes, like so:
+I had to write a parsing system that would map each opcode to a corresponding logical operation. The first part of the problem was how to turn a set of bytes into separate values so that if an opcode contained data, I could get at that data. I could have used binary operators every time but it seemed cleaner to make a class that took in the byte value and exposed the associated nibbles as attributes, like so:
 
 <br>
  ```python
@@ -77,11 +77,11 @@ class Opcode:
  ```
 <br>
 
- Pretty simple eh? I wish I could take credit for this one but many CHIP-8 emulators solve the problem in a similar way.
+Pretty simple eh? I wish I could take credit for this one but many CHIP-8 emulators solve the problem in a similar way.
 
 The next issue was how to map an *opcode* to an *operation*. Most other emulators I had looked at just used a giant switch statement, which seemed inelegant. Some blog posts suggested that function lookups would be a good idea but I felt that would be hard to test and a bit ugly. I decided to write a class for each opcode that would change the state of the (virtual) cpu as required.
 
- I then wrote a mapper class that would take in the raw byte value of an opcode and return the related operation object. It looks like so:
+I then wrote a mapper class that would take in the raw byte value of an opcode and return the related operation object. It looks like this:
 
 <br>
  ```python
@@ -181,7 +181,7 @@ Now I had a way to read binary data from roms, a virtual cpu, and working opcode
 ![renderer test]({{ site.baseurl }}/images/rantimages/chip8_render_test.png)
 <br>
 
-It didn't look like this at first as I had incorrectly implemented the opcode - among other things I had used the raw values in the opcode for my x and y co-ordinates rather than using the registers "pointed at" by those values. Yes, the good old *forgot to dereference a pointer* error. Sigh.
+It didn't look like this at first as I had incorrectly implemented the opcode. Among other things I had used the raw values in the opcode as the "start drawing at x and y co-ordinates" rather than using the values in the registers they pointed to. Yes, the good old *forgot to dereference a pointer* error. Sigh.
 
 The good news is that by writing the renderer test it was easier to track down the bug and I soon had the emulator partially working. I found a useful [test ROM](https://slack-files.com/T3CH37TNX-F3RF5KT43-0fb93dbd1f) to confirm that the emulator was working correctly [(you can see the documentation for it here)](https://slack-files.com/T3CH37TNX-F3RKEUKL4-b05ab4930d) but I was getting strange output like shown below:
 
@@ -209,14 +209,12 @@ It's silly, but it meant the emulator was mostly working! In my excitement I imm
 ![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
 <br>
 
-Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly but this was due to me running my emulator far too slowly *(a CHIP-8 runs best at roughly ~500hz and I was running it at 60hz)* and the drawing operations being rather slow to begin with. I looked up some footage of other CHIP-8 emulators and when I saw the same oddness I breathed a sigh of relief.
+Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly. This was due to me running my emulator far too slowly *(a CHIP-8 runs best at roughly ~500hz and I was running it at 60hz)* and the drawing operation being rather slow to begin with. I looked up some footage of other CHIP-8 emulators and when I saw the same oddness I breathed a sigh of relief.
 
 <br>
 <iframe width="480" height="360" src="https://www.youtube.com/embed/NVd5vOiGhNU" frameborder="0" allow="encrypted-media" allowfullscreen>
 </iframe>
 <br>
-
-Sound was easy enough to implement as the CHIP-8 just emits a beep when the sound counter/register is above zero. To do this in a cross platform way I just decided to send the [bell character](https://en.wikipedia.org/wiki/Bell_character) to the console when it was above zero which had the desired effect.
 
 Input was slightly more complicated so I ended up just using the existing pygame api to handle that. Once I put it all together I could finally play space invaders and other CHIP-8 games like [pong](https://en.wikipedia.org/wiki/Pong) and [tetris](https://en.wikipedia.org/wiki/Tetris). Old and well known they may be but there was something very novel about playing them on a system I had crafted for myself. For reference, this is how my emulator looks playing pong:
 
@@ -226,4 +224,4 @@ Input was slightly more complicated so I ended up just using the existing pygame
 
 I showed off my project to a few people at work and they were pretty awesome in providing feedback and genuine interest. The only downside is they are now egging me on to build a [game boy](https://en.wikipedia.org/wiki/Game_Boy) emulator which I am seriously considering doing if I can find the time.
 
-Building this emulator might seem like a simple enough task but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend some time planning and reading before coding so I felt this was a nice way to stretch my legs with my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would very much recommend it as a fun, achievable project to learn the basics. [You can find the source code for my emulator on github.](https://github.com/edwin-jones/pychip8)
+Building this emulator might seem like a simple enough task but it's one of the biggest projects I've done outside of my day job for a long time and was good fun. I had to spend some time planning and reading before coding so I felt this was a nice way to stretch my legs with my engineering skills. I really enjoyed doing it, especially as I got the chance to show it off which really made the hard work feel validated. If you're interested in emulation even a little bit I would recommend it as a fun project to learn the basics. [You can find the source code for my emulator on github.](https://github.com/edwin-jones/pychip8)
