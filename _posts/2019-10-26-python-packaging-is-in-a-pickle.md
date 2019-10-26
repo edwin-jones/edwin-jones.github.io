@@ -3,7 +3,7 @@ layout: post
 title:  Python Packaging is in a Pickle
 ---
 
-This post is my attempt to summarize my learnings about the basics of how to manage python packages with different tools and commands. I've spent a while collecting this information, hopefully it helps a few people searching for the same information via google too.
+This post is my attempt to summarize my learnings about the basics of how to manage [python](https://www.python.org/) packages with different tools and commands. I've spent a while collecting this information, hopefully it helps a few people searching for the same information via google too.
 
 The tl;dr of this post is: _Python packaging is a bit of a mess._ 
 
