@@ -13,7 +13,7 @@ The three most popular solutions I have found for managing python packages are a
 
 ## Pip
 
-[Pip](https://pypi.org/project/pip/) is the default way to install modules in python and one you've probably used before as it comes by default in most modern installations. The basic usage of pip is along the lines of `pip install {module name}`. The main issue with pip is that it installs _globally_ and not locally inside of the folder you invoked the command from like say, [npm.](https://www.npmjs.com/) This means after a while it's easy to end up with dependency problems where two packages need different versions of the same package but as it's installed globally, you end up in a bit of a pickle.
+[Pip](https://pypi.org/project/pip/) is the default way to install modules in python and one you've probably used before as it comes by default in most modern installations. The basic usage of pip is along the lines of `pip install {module name}`. The main issue with pip is that it installs _globally_ and not locally inside of the folder you invoked the command from like say, [npm.](https://www.npmjs.com/) This means you can encounter dependency problems where two packages need different versions of the same package but as it's installed globally, you end up in a bit of a pickle.
 
 A [requirements file](https://pip.readthedocs.io/en/1.1/requirements.html) can be used with pip for loose requirements, such as _"I need some version of pygame"_ and is used by pip. It tends to be used as a _dev requirements_ file that is shared between developers of a package or programmers reusing the code from a repository. You can simply create a file named `requirements.txt` in the directory of your choosing with content like so:
 
