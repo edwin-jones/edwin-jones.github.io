@@ -36,7 +36,7 @@ Another way to share pip dependencies is with a [setup.py](https://docs.python.o
 
 ## Summary
 
-The reason there isn't one single default tool to manage python packaging appears to be because python is a mature, open source language without direct oversight from a single large corporation like Microsoft has over [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) or Google has over [Go](https://golang.org/). Several groups have developed different methods to try to solve the packaging problem but there is no one single accepted way of doing things.
+The reason there isn't one single default tool to manage python packaging appears to be because python is a mature, open source language. It does not have direct oversight from a single large corporation like Microsoft has over [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) or Google has over [Go](https://golang.org/). Several groups have developed different methods to try to solve the packaging problem but there is no one single accepted way of doing things.
 
 I myself prefer just to use pip with a requirements.txt file if required but it's probably worth looking to `venv` at the very least if you have a large deployment environment to manage.
 
