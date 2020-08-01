@@ -3,7 +3,7 @@ layout: post
 title:  Powerful Powershell Passwords
 ---
 
-_Tl;dr - For all of you doing some googling to find out how to make a secure password with any modern powershell version (i.e. Powershell 5 and above), the code snippet you want is at the bottom of this article._
+_Tl;dr - For all of you doing some googling to find out how to make a secure password with any modern powershell version (i.e. Powershell 5 and above) the code snippet you want is at the bottom of this article._
 
 We've all been there - we've got a new website to sign up for or some credentials to generate for a work account. For most people a password manager is a viable option for generating secure passwords but in many cases you want to automate this flow - ideally in a way that will work on any given platform. Many people work with windows as their OS but others use Mac OS or a variety of linux. While there are a variety of approaches for each, most people I expect would prefer something simple that would work on all of them. I've recently spent some time searching for a good solution for this myself but as I couldn't find one easily  I've written this article in the hopes of sparing somebody else the time it took me to come to these conclusions.
 
