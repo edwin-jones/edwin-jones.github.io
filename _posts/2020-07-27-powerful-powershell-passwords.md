@@ -23,7 +23,7 @@ Google fu can take us some interesting places, usually with multi line scripts t
 Write-Output ( -join ((0x30..0x39) + ( 0x41..0x5A) + ( 0x61..0x7A) | Get-Random -Count 32 | % {[char]$_}) )
 ```
 
-This works and generates something that looks correct but...what on earth is that code doing? It's actually pretty simple - it's putting the ASCII characters `a-z`, `A-Z` and `0-9` into a set, selecting a random character from that set 32 times and dumping that out on your console. Good luck remembering that in a few months though let along editing that command without breaking it. What if we simplified it a bit with:
+This works and generates something that looks correct but...what on earth is that code doing? It's actually pretty simple - it's putting the ASCII characters `a-z`, `A-Z` and `0-9` into a set, selecting a random character from that set 32 times and dumping that out on your console. Good luck remembering that in a few months though let alone editing that command without breaking it. What if we simplified it a bit with:
 
 ``` pwsh
 Write-Output "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".ToCharArray() | Get-Random -Count 32 | Join-String
