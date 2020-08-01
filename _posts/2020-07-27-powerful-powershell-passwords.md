@@ -3,14 +3,13 @@ layout: post
 title:  Powerful Powershell Passwords
 ---
 
-_Tl;dr - For all of you doing some google-fu to find out how to make a secure password with any modern powershell version (i.e. Powershell 5 and above), the code snippet you want is: ```
-Write-Output "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".ToCharArray() | Get-Random -Count 32 | Join-String`_
+_Tl;dr - For all of you doing some googling to find out how to make a secure password with any modern powershell version (i.e. Powershell 5 and above), the code snippet you want is: `Write-Output "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".ToCharArray() | Get-Random -Count 32 | Join-String`_
 
 We've all been there - we've got a new website to sign up for or some credentials to generate for a work account. For most people a password manager is a viable option for generating secure passwords but in many cases you want to automate this flow - ideally in a way that will work on any given platform. Many people work with windows as their OS but others use Mac OS or a variety of linux. While there are a variety of approaches for each, most people I expect would prefer something simple that would work on all of them. I've recently spent some time searching for a good solution for this myself but as I couldn't find one easily  I've written this article in the hopes of sparing somebody else the time it took me to come to these conclusions.
 
 [Powershell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7) has made leaps and bounds since it originally started as a windows only scripting language. It now runs on all your favourite desktop operating systems and makes a perfect candidate for finding a simple command that the majority of people can just run without installing anything else. The old way to generate a password in powershell is as follows:
 
-``` pwsh
+```pwsh
 Add-Type -AssemblyName 'System.Web'
 $length = 32
 [System.Web.Security.Membership]::GeneratePassword($length, 0)
@@ -20,13 +19,13 @@ This works by using a static method we borrow from C# to generate a password of 
 
 Google fu can take us some interesting places, usually with multi line scripts that are hard to confirm are crytopgraphically sound. The smallest gist I've found so far is [this one](https://gist.github.com/marcgeld/4891bbb6e72d7fdb577920a6420c1dfb). It looks pretty promising, but ideally I think we'd all like to use a one liner we can easily share with our peers. Looking at the code in that gist, we can take one line of it and use that:
 
-``` pwsh
+```ps1 
 Write-Output ( -join ((0x30..0x39) + ( 0x41..0x5A) + ( 0x61..0x7A) | Get-Random -Count 32 | % {[char]$_}) )`
 ```
 
 This works and generates something that looks correct but...what on earth is that code doing? It's actually pretty simple - it's putting the ASCII characters `a-z`, `A-Z` and `0-9` into a set, selecting a random character from that set 32 times and dumping that out on your console. Good luck remembering that in a few months though let along editing that command without breaking it. What if we simplified it a bit with:
 
-``` pwsh
+```
 Write-Output "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".ToCharArray() | Get-Random -Count 32 | Join-String`
 ```
 
