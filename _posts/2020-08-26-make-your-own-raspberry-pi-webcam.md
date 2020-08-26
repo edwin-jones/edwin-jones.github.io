@@ -26,7 +26,9 @@ My heart sank again when I booted it because the image was rather blurry. Turns 
 explained what was wrong and more importantly that _you can manually focus a v2 camera with some tweezers!_ 
 An awkward and fiddly step later and this was the result:
 
+<br>
 ![webcam-example]({{ site.baseurl }}/images/rantimages/pi-webcam-image.png)
+<br>
 
 Impressive no? David's configuration sets up the camera to act as a generic [UVC](https://en.wikipedia.org/wiki/USB_video_device_class) 1080p, 
 30fps webcam that should work on any OS - I set mine up on [Pop OS](https://pop.system76.com/) and it worked just fine. 
@@ -35,14 +37,14 @@ Considering c920 costs so much, I saw this as a significant win.
 
 If you want to try this out yourself, you'll need the following parts:
 
-1. A micro usb cable that can reach to your PC
-1. An 8GB SD card or better. I like Jeff Gerling's recommendation of the [Samsung 32GB EVO Plus](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019) as these often go for £5 or so and offer very good performance.
-1. [a Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) - these cost more than the regular pi zero but being able to SSH in to configure the device is more than worth it!
-1. A case - I recommend the official [Pi Zero case](https://thepihut.com/products/official-raspberry-pi-zero-case) as it has a cut out for the v2 camera lens and comes with the camera ribbon cable which you'll also need.
-1. A Ribbon cable for the camera module. See point 4 for the easiest way to get one.
-1. [A v2 camera module](https://www.raspberrypi.org/products/camera-module-v2/)
-1. Something to hold the Pi with so the camera can aim at your face. A mobile phone tripod will do the trick and you can get them for £5 or so on [ebay.](https://www.ebay.co.uk/)
-1. A computer to flash the SD card and use SSH with.
+* A micro usb cable that can reach to your PC.
+* [A decent micro SD card.](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019)
+* [a Pi Zero W.](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
+* [A case.](https://thepihut.com/products/official-raspberry-pi-zero-case)
+* A Ribbon cable for the camera module. (Comes with the official case.)
+* [A v2 camera module.](https://www.raspberrypi.org/products/camera-module-v2/)
+* Something to hold the Pi with so the camera can aim at your face.
+* A computer to flash the SD card and use SSH with.
 
 Assuming you already have a computer, the cost of all of the above is only around £45 and if you have any of the parts already you'll save even more. 
 Who needs a £100 webcam? David uses the [Pi HQ camera] (https://www.raspberrypi.org/products/raspberry-pi-high-quality-camera/) but 
@@ -75,7 +77,9 @@ We're ready to boot up now! Plug your sd card into your Pi Zero W and attach the
 Connect a micro usb cable to the Pi's USB _data_ port (not the power port) and plug it into your PC. The data port is the one in the middle, 
 not the one near the edge of the board. Once assembled you should have something that looks similar to mine, which is currently mounted on my monitor stand:
 
+<br>
 ![webcam-in-stand]({{ site.baseurl }}/images/rantimages/pi-webcam.jpg)
+<br>
 
 Give it a minute or so to boot up and we'll move on to the next step. We should now be able to see our Pi on the local network. 
 There's a few ways to do this but I've found it best to use the official guide to find the 
