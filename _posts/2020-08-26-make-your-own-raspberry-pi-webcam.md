@@ -15,7 +15,7 @@ it seemed that people far smarter than me weren't having any luck, so I gave up 
 Recently I came across a post by [David Hunt](http://www.davidhunt.ie/raspberry-pi-zero-with-pi-camera-as-usb-webcam) 
 that made my heart skip a beat - he'd cracked the remaining steps and created a detailed post about how to configure everything.
 
-I realised that this probably wouldn't work if I needed to quickly unplug the pi as power cuts can cause SD card corruption - then I remembered that you can configure a raspberry pi to have a read only operating system. 
+I realised that this probably wouldn't work if I needed to quickly unplug the Pi as power cuts can cause SD card corruption - then I remembered that you can configure the Pi to have a read only operating system. 
 As this would only be plugged in via USB without any network access, I wouldn't need OS or software updates! 
 I'd done this years before but long since forgotten how, 
 thankfully another post by [Andreas Schallwig](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) 
@@ -30,8 +30,7 @@ One awkward and fiddly step later this was the result:
 ![webcam-example]({{ site.baseurl }}/images/rantimages/pi-webcam-image.png)
 <br>
 
-Impressive no? David's configuration sets up the camera to act as a generic [UVC](https://en.wikipedia.org/wiki/USB_video_device_class) 1080p, 
-30fps webcam that should work on most desktop operating systems. I set mine up on [Pop OS](https://pop.system76.com/) and it worked just fine. 
+Impressive no? David's configuration sets up the camera to act as a generic [UVC](https://en.wikipedia.org/wiki/USB_video_device_class) 1080p/30fps webcam that should work on most desktop operating systems. I set mine up on [Pop OS](https://pop.system76.com/) and it worked just fine. 
 It looks significantly better than my laptop camera at 720p and matches the spec of the c920 I mentioned earlier. 
 Considering the c920 costs so much, I saw this as a significant win.
 
@@ -51,7 +50,7 @@ Who needs a £100 webcam? David uses the [Pi HQ camera](https://www.raspberrypi.
 this is overkill for a webcam and costs a lot more than the v2. 
 The Pi Camera V1 should also work but those are no longer in production so I couldn't verify this myself.
 
-To get started, you'll need to download the latest version of the Raspberry Pi OS and flash it on your SD card. 
+To get started, you'll need to download the latest version of the Raspberry Pi OS and flash it onto your SD card. 
 The easiest way to do this I've found is to use the [official Raspberry Pi Imager tool](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/) 
 and choose _Rasbian Lite_ as the OS image - we're not going to be using a desktop on our webcam!
 
@@ -76,8 +75,8 @@ network={
 You can change the country code if you live outside of the UK - acceptable values are `us, de, fr` etc. depending on your country.
 
 Plug your SD card into your Pi and attach the v2 Camera inside of the case. 
-[There's a handy guide here](https://www.youtube.com/watch?v=xjRFtqHAztA) If you've never done this before. 
-Connect a micro usb cable to the Pi's USB _data_ port and plug it into your PC. The data port is the one in the middle, 
+[There's a handy guide here](https://www.youtube.com/watch?v=xjRFtqHAztA) if you've never done this before. 
+Connect a micro USB cable to the Pi's USB _data_ port and plug it into your PC. The data port is the one in the middle, 
 not the one near the edge of the board. Once assembled you should have something that looks similar to mine, which is currently mounted on my monitor stand:
 
 <br>
@@ -102,7 +101,7 @@ dtoverlay=dwc2
 ```
 <br>
 
-Once you've run through the above, you can reboot the pi and start accessing the system via TTY over USB. 
+Once you've run through the above, you can reboot the Pi and start accessing the system via TTY over USB. 
 If you're comfortable doing this and want to disable wifi for security, add the following lines to end of the `/boot/config.txt` file, 
 under the `dtoverlay=dwc2` line:
 
@@ -114,7 +113,7 @@ dtoverlay=pi3-disable-bt
 ```
 <br>
 
-This is completely optional and if you'd rather just use wifi, that's fine as well! If you do want to do it and you're on linux, make sure to add yourself to the `dialout` and `tty` groups as I couldn't connect without doing this first.
+This is completely optional and if you'd rather just use wifi, that's fine as well! If you do want to do it and you're using Linux make sure to add yourself to the `dialout` and `tty` groups as I couldn't connect without doing this first.
 
 We should now be able to see the raspberry pi show up as a webcam now in a variety of applications. 
 If you can't see yours you might want to double check you've done all the steps above. 
@@ -133,7 +132,7 @@ v4l2-ctl -c vertical_flip=(1 or 0, 1 is on 0 is off)
 
 If the camera appears fuzzy remember you can manually focus the lens with a pair of tweezers as demonstrated 
 [in this video.](https://www.youtube.com/watch?v=xjRFtqHAztA) 
-You will probably see a little noise in the image but this is normal for the Pi Camera V1/V2 as their sensors can be a slightly noisy in certain situations.
+You will probably see a little noise in the image but this is normal for the Pi camera V1/V2 as their sensors can be a slightly noisy in certain situations.
 
 Once you're happy with the video quality, it's time to set the Pi into read only mode so we can switch off our PC whenever and 
 not have to worry about corrupting the SD card. Follow [Andreas's guide here](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) then reboot your pi. 
