@@ -37,11 +37,11 @@ Considering c920 costs so much, I saw this as a significant win.
 
 If you want to try this out yourself, you'll need the following parts:
 
-* A micro usb cable that can reach to your PC.
+* A [micro usb data cable](https://www.quora.com/What-is-the-difference-between-a-USB-charging-cable-and-a-data-cable).
 * [A decent micro SD card.](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019)
-* [a Pi Zero W.](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
+* [A Pi Zero W.](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
 * [A case.](https://thepihut.com/products/official-raspberry-pi-zero-case)
-* A Ribbon cable for the camera module. (Comes with the official case.)
+* A Ribbon cable for the camera module. (This comes with the official case.)
 * [A v2 camera module.](https://www.raspberrypi.org/products/camera-module-v2/)
 * Something to hold the Pi with so the camera can aim at your face.
 * A computer to flash the SD card and use SSH with.
@@ -59,6 +59,7 @@ Once you've flashed the SD card you need to open up to `boot` partition in your 
 Add one called "ssh" with _no_ file extension - we'll need this to enable SSH access for later. Add a second one called `wpa_supplicant.conf` 
 and give it the following content:
 
+<br>
 ```country=gb
 update_config=1
 ctrl_interface=/var/run/wpa_supplicant
@@ -69,6 +70,7 @@ network={
  psk="MyWifiPassword"
 }
 ```
+<br>
 
 You can change the country code if you live outside of the UK - acceptable values are `us, de, fr` etc depending on your country.
 
@@ -91,20 +93,24 @@ I would point out a major problem I had was that I tried to edit only the `/boot
 end of the `console` line. You _must_ make changes to the _`/boot/config.txt`_ file as well and it's easy to miss this in the guide. Add these lines 
 to the bottom of the config file:
 
+<br>
 ```
 # Enable usb gadget mode
 dtoverlay=dwc2
 ```
+<br>
 
 Once you've run through the above, you can reboot the pi and start accessing the system via tty over usb. 
 If you're comfortable doing this and want to disable wifi for security, add the following lines to end of the `/boot/config.txt` file, 
 under the `dtoverlay=dwc2` line:
 
+<br>
 ```
 # Disable wifi and bluetooth (we use TTY connections over usb)
 dtoverlay=pi3-disable-wifi
 dtoverlay=pi3-disable-bt
 ```
+<br>
 
 This is completely optional and if you'd rather just wifi, that's fine as well! 
 We should be able to see the raspberry pi show up as a webcam now in a variety of applications. 
@@ -112,6 +118,7 @@ If you can't see yours you might want to double check you've done all the steps 
 You can adjust the camera a little to make it brighter you can adjust brightness, contrast and rotation by adding these lines to your `/etc/rc.local` file, 
 just above the `exit 0` line:
 
+<br>
 ```
 # set camera settings
 v4l2-ctl -c brightness=(0-100, pick a number! Starts at 50)
@@ -119,12 +126,13 @@ v4l2-ctl -c contrast=(0-100, pick a number! Starts at 20)
 v4l2-ctl -c horizontal_flip=(1 or 0, 1 is on 0 is off)
 v4l2-ctl -c vertical_flip=(1 or 0, 1 is on 0 is off)
 ```
+<br>
 
 If the camera appears fuzzy remember you can manually focus the lens with a pair of tweezers as demonstrated 
-[in this video.](https://www.youtube.com/watch?v=xjRFtqHAztA). 
+[in this video.](https://www.youtube.com/watch?v=xjRFtqHAztA) 
 You will probably see a little noise in the image but this is normal for the Pi Camera V1/V2 as their sensors can be a little noisy in certain situations.
 
 Once you're happy with the video quality, it's time to set the pi into read only mode so we can switch off our pc whenever and 
-not have to worry about corrupting the SD card. Follow Andreas' [guide here](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) then reboot your pi. 
+not have to worry about corrupting the SD card. Follow [Andreas's guide here](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) then reboot your pi. 
 Once the camera comes back online your all good and ready to show your friends and co workers your new high quality camera 
 that cost a fraction of what theirs did, and is likely better. Congratulations!
