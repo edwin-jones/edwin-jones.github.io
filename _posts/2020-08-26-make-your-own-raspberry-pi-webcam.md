@@ -8,21 +8,21 @@ have been much harder to come by and generally cost a lot more than they used to
 The oft lauded [Logitech c920](https://www.logitech.com/en-us/product/hd-pro-webcam-c920) goes for the best part of £100 if not more, 
 and that's if you can find one in stock.
 
-I had and idea a few months ago that I could probably jury-rig [a raspberry pi zero](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) 
+I had the idea a few months ago that I could probably jury-rig [a Raspberry Pi Zero](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) 
 with a [camera module](https://www.raspberrypi.org/products/camera-module-v2/) to be a USB webcam but I didn't know enough about how to configure one 
 to make it work. I was following [this thread](https://www.raspberrypi.org/forums/viewtopic.php?f=38&t=148361) on the official forums but 
 it seemed that people far smarter than me weren't having any luck, so I gave up for the meanwhile. 
 Recently I came across a post by [David Hunt](http://www.davidhunt.ie/raspberry-pi-zero-with-pi-camera-as-usb-webcam) 
 that made my heart skip a beat - he'd cracked the remaining steps and created a detailed post about how to configure everything.
 
-My heart sank when I realised that this probably wouldn't work if I needed to quickly unplug the pi as power cuts can cause SD card corruption - then I remembered that you can configure a raspberry pi to have a read only operating system. 
+I realised that this probably wouldn't work if I needed to quickly unplug the pi as power cuts can cause SD card corruption - then I remembered that you can configure a raspberry pi to have a read only operating system. 
 As this would only be plugged in via USB without any network access, I wouldn't need OS or software updates! 
 I'd done this years before but long since forgotten how, 
 thankfully another post by [Andreas Schallwig](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) 
-has me covered with a detailed guide for the latest version of the Raspberry Pi OS, [Buster.](https://www.raspberrypi.org/blog/buster-the-new-version-of-raspbian/)
+had me covered with a detailed guide for the latest version of the Raspberry Pi OS, [Buster.](https://www.raspberrypi.org/blog/buster-the-new-version-of-raspbian/)
 
-I followed both guides and added some customisations of my own to turn off the wifi and bluetooth of my pi. 
-My heart sank again when I booted it because the image was rather blurry. Turns out yet another blogger had me covered - Jeff Gerling's [post about the camera](https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models) 
+I followed both guides and added some customisations of my own to turn off the wifi of my Pi. 
+I couldn't quite figure out why the image appeared blurry at this stage. Turns out yet another blogger had me covered - Jeff Gerling's [post about the camera](https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models) 
 explained what was wrong and more importantly that _you can manually focus a v2 camera with some tweezers!_ 
 One awkward and fiddly step later this was the result:
 
@@ -51,12 +51,12 @@ Who needs a £100 webcam? David uses the [Pi HQ camera](https://www.raspberrypi.
 this is overkill for a webcam and costs a lot more than the v2. 
 The Pi Camera V1 should also work but those are no longer in production so I couldn't verify this myself.
 
-To get started, you'll need to download the latest version of raspbian and flash it on your SD card. 
+To get started, you'll need to download the latest version of the Raspberry Pi OS and flash it on your SD card. 
 The easiest way to do this I've found is to use the [official Raspberry Pi Imager tool](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/) 
 and choose _Rasbian Lite_ as the OS image - we're not going to be using a desktop on our webcam!
 
 Once you've flashed the SD card you need to open up the `boot` partition in your file explorer and add two files. 
-Add one called "ssh" with _no_ file extension - we'll need this to enable SSH access for later. Add a second one called `wpa_supplicant.conf` 
+Add one called `ssh` with _no_ file extension - we'll need this to enable SSH access for later. Add a second one called `wpa_supplicant.conf` 
 and give it the following content:
 
 <br>
@@ -75,7 +75,7 @@ network={
 
 You can change the country code if you live outside of the UK - acceptable values are `us, de, fr` etc. depending on your country.
 
-We're ready to boot up now! Plug your SD card into your Pi and attach the v2 Camera inside of the case. 
+Plug your SD card into your Pi and attach the v2 Camera inside of the case. 
 [There's a handy guide here](https://www.youtube.com/watch?v=xjRFtqHAztA) If you've never done this before. 
 Connect a micro usb cable to the Pi's USB _data_ port and plug it into your PC. The data port is the one in the middle, 
 not the one near the edge of the board. Once assembled you should have something that looks similar to mine, which is currently mounted on my monitor stand:
