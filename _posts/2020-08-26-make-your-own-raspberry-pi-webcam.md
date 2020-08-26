@@ -15,16 +15,14 @@ it seemed that people far smarter than me weren't having any luck, so I gave up 
 Recently I came across a post by [David Hunt](http://www.davidhunt.ie/raspberry-pi-zero-with-pi-camera-as-usb-webcam) 
 my heart skipped a beat - he'd cracked the remaining steps and created a detailed post about how to configure everything.
 
-My heart sank when I realised that this probably wouldn't work if I needed to quickly unplug the pi as power cuts can cause SD card corruption 
-- then I remembered that you can configure a raspberry pi to have a read only operating system. 
+My heart sank when I realised that this probably wouldn't work if I needed to quickly unplug the pi as power cuts can cause SD card corruption - then I remembered that you can configure a raspberry pi to have a read only operating system. 
 As this would only be plugged in via USB without any network access, I wouldn't need OS or software updates! 
 I'd done this years before but long since forgotten how, 
 thankfully another post by [Andreas Schallwig](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) 
 has me covered with a detailed guide for the latest version of the Raspberry Pi OS, [Buster.](https://www.raspberrypi.org/blog/buster-the-new-version-of-raspbian/)
 
 I followed both guides and added some customisations of my own to turn off the wifi and bluetooth of my pi. 
-My heart sank again when I booted it because the image was rather blurry. Turns out yet another blogger had me covered 
-- [Jeff Gerling's post about the camera](https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models) 
+My heart sank again when I booted it because the image was rather blurry. Turns out yet another blogger had me covered - [Jeff Gerling's post about the camera](https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models) 
 explained what was wrong and more importantly that _you can manually focus a v2 camera with some tweezers!_ 
 An awkward and fiddly step later and this was the result:
 
@@ -37,14 +35,14 @@ Considering c920 costs so much, I saw this as a significant win.
 
 If you want to try this out yourself, you'll need the following parts:
 
-1) A micro usb cable that can reach to your PC
-2) An 8GB SD card or better. I like Jeff Gerling's recommendation of the [Samsung 32GB EVO Plus](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019) as these often go for £5 or so and offer very good performance.
-3) [a Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) - these cost more than the regular pi zero but being able to SSH in to configure the device is more than worth it!
-4) A case - I recommend the official [Pi Zero case](https://thepihut.com/products/official-raspberry-pi-zero-case) as it has a cut out for the v2 camera lens and comes with the camera ribbon cable which you'll also need.
-5) A Ribbon cable for the camera module. See point 4 for the easiest way to get one.
-6) [A v2 camera module](https://www.raspberrypi.org/products/camera-module-v2/)
-7) Something to hold the Pi with so the camera can aim at your face. A mobile phone tripod will do the trick and you can get them for £5 or so on [ebay.](https://www.ebay.co.uk/)
-8) A computer to flash the SD card and use SSH with.
+1. A micro usb cable that can reach to your PC
+1. An 8GB SD card or better. I like Jeff Gerling's recommendation of the [Samsung 32GB EVO Plus](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019) as these often go for £5 or so and offer very good performance.
+1. [a Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) - these cost more than the regular pi zero but being able to SSH in to configure the device is more than worth it!
+1. A case - I recommend the official [Pi Zero case](https://thepihut.com/products/official-raspberry-pi-zero-case) as it has a cut out for the v2 camera lens and comes with the camera ribbon cable which you'll also need.
+1. A Ribbon cable for the camera module. See point 4 for the easiest way to get one.
+1. [A v2 camera module](https://www.raspberrypi.org/products/camera-module-v2/)
+1. Something to hold the Pi with so the camera can aim at your face. A mobile phone tripod will do the trick and you can get them for £5 or so on [ebay.](https://www.ebay.co.uk/)
+1. A computer to flash the SD card and use SSH with.
 
 Assuming you already have a computer, the cost of all of the above is only around £45 and if you have any of the parts already you'll save even more. 
 Who needs a £100 webcam? David uses the [Pi HQ camera] (https://www.raspberrypi.org/products/raspberry-pi-high-quality-camera/) but 
