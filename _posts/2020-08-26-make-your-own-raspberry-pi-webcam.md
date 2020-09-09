@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Make your own raspberry pi webcam
+title: Make your own Raspberry Pi webcam
 ---
 
 2020 has been an _interesting_ year to say the least, but one of the oddest side effects of coronavirus is the fact that USB webcams 
@@ -135,6 +135,6 @@ If the camera appears fuzzy remember you can manually focus the lens with a pair
 You will probably see a little noise in the image but this is normal for the Pi camera V1/V2 as their sensors can be a slightly noisy in certain situations.
 
 Once you're happy with the video quality, it's time to set the Pi into read only mode so we can switch off our PC whenever and 
-not have to worry about corrupting the SD card. Follow [Andreas's guide here](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) then reboot your pi. 
+not have to worry about corrupting the SD card. Follow [Andreas's guide here](https://medium.com/swlh/make-your-raspberry-pi-file-system-read-only-raspbian-buster-c558694de79) then reboot your Pi. 
 Once the Pi comes back online you're ready to show your friends and co-workers your webcam 
 that cost a fraction of what theirs did and is likely better. Congratulations!
