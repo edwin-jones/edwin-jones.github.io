@@ -13,7 +13,7 @@ On this page you can see random projects and tinkerings I have made over the yea
 <br>
 
 ### Mirrorless Edge (Mini Ludum Dare Entry, March 2014)
-This is a little game I made with [my friend Steven,](http://sbatman.com/) back in March 2014. 
+This is a little game I made with my friend Steven back in March 2014. 
 We used typescript for this *(because it is **awesome**)*. The game is a simple endless runner but can still be quite addictive.
 
 [![Alt text](images/mirrorlessedge.jpg)](https://github.com/edwin-jones/LDMINI50)
