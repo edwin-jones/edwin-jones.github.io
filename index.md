@@ -20,13 +20,9 @@ on at length on issues both personal and professional as I am a prolific writer,
 so please visit my rants page to
 check some of my writing out.
 
-(PS: I’ve had a few requests for some video of me on Game Guru, so here is a video
+[(PS: I’ve had a few requests for some video of me on Game Guru, so here is a video
 of me in 2005 reviewing Perfect Dark Zero just after the launch of the Xbox 360.
-Enjoy!)
-
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/H3MIAfOgjBI?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
+Enjoy!)](https://www.youtube.com/watch?v=H3MIAfOgjBI)
 
 ### Contact me
 <script type="text/javascript">printEmailAddress();</script>
