@@ -5,6 +5,17 @@ title: Games
 
 Here you can find details of some of the games I have worked on previously.
 
+### Fall Guys (2020)
+
+<br>
+
+[![FG](https://upload.wikimedia.org/wikipedia/en/5/5e/Fall_Guys_cover.jpg)](https://en.wikipedia.org/wiki/Fall_Guys)
+
+I worked on a variety of backend for this title to provide user account services and more in dotnet, powershell and
+typescript.
+
+<br>
+
 ### Battlefield 1 (2016)
 
 <br>
