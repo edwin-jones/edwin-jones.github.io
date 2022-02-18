@@ -3,12 +3,12 @@ layout: post
 title: SSH Agent Man - How does SSH agent work?
 ---
 
-I've been using [SSH](https://www.atlassian.com/git) for quite a while now and have used [SSH keys](https://www.atlassian.com/git/tutorials/git-ssh) regularly to authenticate myself with
+I've been using [SSH](https://en.wikipedia.org/wiki/Secure_Shell) for quite a while now and have used [SSH keys](https://www.atlassian.com/git/tutorials/git-ssh) regularly to authenticate myself with
 a variety of systems both at work and at home. I historically have been a bit lazy and avoided using passwords 
 for my private keys to avoid having to remember said password and type it in every time. Eventually I learned 
 of [SSH Agent](https://en.wikipedia.org/wiki/Ssh-agent) - a tool that allows you to type your SSH password in once per session to save on repetitive password entry by storing the decrypted value of the key in memory for easy access.
 
-Generally wherever I've installed SSH agent I tend to use some fire and forget scripts so I don't actually follow along or remember exactly how it works, just what it does. That changed recently at work as I've been trying to use [Powershell](https://github.com/PowerShell/PowerShell) more at work on [WSL2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) so script snippets I learn and share around are more user friendly for my colleagues and friends on Windows systems. This lead to a bit of a snag as it didn't have an obvious way to make SSH Agent work and I couldn't figure out why. As I didn't know of any simple tools to 
+Generally wherever I've installed SSH agent I tend to use some fire and forget scripts so I don't actually follow along or remember exactly how it works, just what it does. That changed recently at work as I've been trying to use [Powershell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2) more at work on [WSL2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) so script snippets I learn and share around are more user friendly for my colleagues and friends on Windows systems. This lead to a bit of a snag as it didn't have an obvious way to make SSH Agent work and I couldn't figure out why. As I didn't know of any simple tools to 
 get things running I put my detective hat on and went to work.
 
 My first step was to compare the environments of my usual daily driver shell, [fish](https://fishshell.com/) and Powershell to see if I was missing anything obvious and it turns out I was - my powershell sessions were missing two crucial environment variables my fish shell had: `$SSH_AUTH_SOCK` and `$SSH_AGENT_PID`. If I added 
