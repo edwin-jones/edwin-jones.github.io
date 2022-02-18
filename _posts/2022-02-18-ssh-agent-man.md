@@ -113,5 +113,5 @@ Hopefully you can see the script is doing mostly the same as the fish equivalent
 
 I restarted my computer to be sure nothing was hanging over from previous sessions and loaded up a new terminal. I tried to run an ssh command and entered the key when prompted. I then ran the same command a second time and it worked as expected. I then opened a new terminal instance and ran the same command a third time with complete success. I was quite pleased I'd managed to solve my problem with a little digging and didn't need to switch away from powershell to enjoy using the utility of ssh agent.
 
-I hope this helps you - knowing what your tools are doing under the hood lets you adapt them for other usages and workflows like I have here. Learning a bit about ssh-agent means I get to keep using powershell where I want to and now have the tools I need to solve any related problems in the future. 
+I hope this helps you - I find knowing what your tools are doing under the hood lets you adapt them for other usages and workflows like I have here. Learning a bit about ssh-agent means I get to keep using powershell where I want to and now have the tools I need to solve any related problems in the future. 
 
