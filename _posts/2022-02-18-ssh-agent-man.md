@@ -55,7 +55,7 @@ end
 
 It was a bit hard to parse at first but I could tell that it was checking if ssh-agent had been run and if not, starting it and storing the terminal output of the command in the environment variables I mentioned earlier. I couldn't quite understand exactly what it was doing in a few places - what was `$SSH_ENV`? Why was it passing the `-c` flag to ssh-agent? It turns out both had simple answers. `$SSH_ENV` was resolving to `/home/username/.ssh/environment` - a simple text file. The script was invoking ssh-agent with the `-c` flag to force output to print in a simpler manner which according to the [man page](https://en.wikipedia.org/wiki/Man_page) means to _Generate C-shell commands on stdout._ I wasn't entirely sure what this meant but I could see that the output went from something like:
 
-```bash
+```
 SSH_AUTH_SOCK=/tmp/ssh-hyn2bsayp8Ot/agent.38600; export SSH_AUTH_SOCK;
 SSH_AGENT_PID=38601; export SSH_AGENT_PID;
 echo Agent pid 38601;
@@ -63,7 +63,7 @@ echo Agent pid 38601;
 
 to
 
-```bash
+```
 setenv SSH_AUTH_SOCK /tmp/ssh-myYdPLcMCmBn/agent.38914;
 setenv SSH_AGENT_PID 38915;
 echo Agent pid 38915;
