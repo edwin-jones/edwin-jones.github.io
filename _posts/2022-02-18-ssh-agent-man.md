@@ -73,7 +73,7 @@ Finally, I noticed it was using [sed](https://en.wikipedia.org/wiki/Sed) to comm
 
 I was almost there, but I couldn't quite figure out how fish was taking this output and using it. I finally twigged that it was [sourcing](https://superuser.com/questions/46139/what-does-source-do) the environment text file as script, exporting those environment variables to the current session.
 
-It all made sense. The script was using the environment file to check if it had been run before. If it had it checked to see if the process id recorded in the script was currently in use. If it wasn't it ran ssh-agent and exported the output to the current session. If was, it exported the existing variables in the file. This meant that anything trying to use ssh agent in a shell session could know what socket ssh-agent was already running on to communicate with it and use the decrypted ssh key any time it was required.
+It all made sense. The script was using the environment file to check if it had been run before. If it had it checked to see if the process id recorded in the script was currently in use. If it wasn't it ran ssh-agent and exported the output to the current session. If was, it exported the existing variables in the file. This meant that anything trying to use ssh agent in a shell session could know what socket ssh-agent was already listening to and communicate with it. This would allow use of the decrypted ssh key any time it was required.
 
 I was almost there. The next step was to make it work in powershell where bash style commands don't always work. I took the brute force approach of rewriting the script and sticking it into my $PROFILE file like so:
 
