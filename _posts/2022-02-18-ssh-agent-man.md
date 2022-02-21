@@ -16,7 +16,7 @@ these variables to my [$PROFILE](https://docs.microsoft.com/en-us/powershell/mod
 
 I floundered a bit at first and tried to see if manually running `ssh-agent` would fix things - instead I just saw some strange output in the terminal. I did however notice that a new ssh agent process had started and things began to click a little. My next step was to look deeper into my fish configuration to see if I could figure out exactly what it was doing. Here I found out I'd installed [fish_ssh_agent](https://github.com/ivakyb/fish_ssh_agent) and noticed it had easily accessible source code so I took a look at exactly what it was doing:
 
-```fish
+```
 function __ssh_agent_is_started -d "check if ssh agent is already started"
    if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
       source $SSH_ENV > /dev/null
@@ -75,7 +75,7 @@ It all made sense. The script was using the environment file to check if it had 
 
 I was almost there. The next step was to make it work in powershell where bash style commands don't always work. I took the brute force approach of rewriting the script and sticking it into my $PROFILE file like so:
 
-```pwsh
+```
 # Stick this in your "$profile" file.
 # Rough explanation of ssh-agent output here: http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/
 # Note, https://github.com/ivakyb/fish_ssh_agent/blob/master/functions/fish_ssh_agent.fish takes a similar approach.
