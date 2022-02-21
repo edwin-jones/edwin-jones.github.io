@@ -17,7 +17,6 @@ these variables to my [$PROFILE](https://docs.microsoft.com/en-us/powershell/mod
 I floundered a bit at first and tried to see if manually running `ssh-agent` would fix things - instead I just saw some strange output in the terminal. I did however notice that a new ssh agent process had started and things began to click a little. My next step was to look deeper into my fish configuration to see if I could figure out exactly what it was doing. Here I found out I'd installed [fish_ssh_agent](https://github.com/ivakyb/fish_ssh_agent) and noticed it had easily accessible source code so I took a look at exactly what it was doing:
 
 ```fish
-
 function __ssh_agent_is_started -d "check if ssh agent is already started"
    if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
       source $SSH_ENV > /dev/null
@@ -50,7 +49,6 @@ function fish_ssh_agent --description "Start ssh-agent if not started yet, or us
       __ssh_agent_start
    end
 end
-
 ```
 
 It was a bit hard to parse at first but I could tell that it was checking if ssh-agent had been run and if not, starting it and storing the terminal output of the command in the environment variables I mentioned earlier. I couldn't quite understand exactly what it was doing in a few places - what was `$SSH_ENV`? Why was it passing the `-c` flag to ssh-agent? It turns out both had simple answers. `$SSH_ENV` was resolving to `/home/username/.ssh/environment` - a simple text file. The script was invoking ssh-agent with the `-c` flag to force output to print in a simpler manner which according to the [man page](https://en.wikipedia.org/wiki/Man_page) means to _Generate C-shell commands on stdout._ I wasn't entirely sure what this meant but I could see that the output went from something like:
@@ -114,4 +112,3 @@ Hopefully you can see the script is doing mostly the same as the fish equivalent
 I restarted my computer to be sure nothing was hanging over from previous sessions and loaded up a new terminal. I tried to run an ssh command and entered the key when prompted. I then ran the same command a second time and it worked as expected. I then opened a new terminal instance and ran the same command a third time with complete success. I was quite pleased I'd managed to solve my problem with a little digging and didn't need to switch away from powershell to enjoy using the utility of ssh agent.
 
 I hope this helps you - I find knowing what your tools are doing under the hood lets you adapt them for other usages and workflows like I have here. Learning a bit about ssh-agent means I get to keep using powershell where I want to and now have the tools I need to solve any related problems in the future. 
-
