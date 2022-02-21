@@ -16,7 +16,7 @@ these variables to my [$PROFILE](https://docs.microsoft.com/en-us/powershell/mod
 
 I floundered a bit at first and tried to see if manually running `ssh-agent` would fix things - instead I just saw some strange output in the terminal. I did however notice that a new ssh agent process had started and things began to click a little. My next step was to look deeper into my fish configuration to see if I could figure out exactly what it was doing. Here I found out I'd installed [fish_ssh_agent](https://github.com/ivakyb/fish_ssh_agent) and noticed it had easily accessible source code so I took a look at exactly what it was doing:
 
-```
+```fish
 
 function __ssh_agent_is_started -d "check if ssh agent is already started"
    if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
@@ -55,7 +55,7 @@ end
 
 It was a bit hard to parse at first but I could tell that it was checking if ssh-agent had been run and if not, starting it and storing the terminal output of the command in the environment variables I mentioned earlier. I couldn't quite understand exactly what it was doing in a few places - what was `$SSH_ENV`? Why was it passing the `-c` flag to ssh-agent? It turns out both had simple answers. `$SSH_ENV` was resolving to `/home/username/.ssh/environment` - a simple text file. The script was invoking ssh-agent with the `-c` flag to force output to print in a simpler manner which according to the [man page](https://en.wikipedia.org/wiki/Man_page) means to _Generate C-shell commands on stdout._ I wasn't entirely sure what this meant but I could see that the output went from something like:
 
-```
+```bash
 SSH_AUTH_SOCK=/tmp/ssh-hyn2bsayp8Ot/agent.38600; export SSH_AUTH_SOCK;
 SSH_AGENT_PID=38601; export SSH_AGENT_PID;
 echo Agent pid 38601;
@@ -63,7 +63,7 @@ echo Agent pid 38601;
 
 to
 
-```
+```bash
 setenv SSH_AUTH_SOCK /tmp/ssh-myYdPLcMCmBn/agent.38914;
 setenv SSH_AGENT_PID 38915;
 echo Agent pid 38915;
@@ -77,7 +77,7 @@ It all made sense. The script was using the environment file to check if it had 
 
 I was almost there. The next step was to make it work in powershell where bash style commands don't always work. I took the brute force approach of rewriting the script and sticking it into my $PROFILE file like so:
 
-```
+```pwsh
 # Stick this in your "$profile" file.
 # Rough explanation of ssh-agent output here: http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/
 # Note, https://github.com/ivakyb/fish_ssh_agent/blob/master/functions/fish_ssh_agent.fish takes a similar approach.
