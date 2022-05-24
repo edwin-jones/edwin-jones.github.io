@@ -3,6 +3,8 @@ layout: post
 title:  How I stopped worrying and learned to love emulation
 ---
 
+**_UPDATE 2022: This post has now been rewritten for issue 54 of wireframe magazine and is available [here on page 48.](https://wireframe.raspberrypi.com/issues/54)_**
+
 Emulators fancinate me. The idea that you could run a computer within another computer feels like some sort of arcane vodoo magic. [Playing Gamecube games on a PC?](https://www.google.co.uk/search?q=dolphin+emulator&oq=dolphin+emulator&aqs=chrome..69i57.1996j0j7&sourceid=chrome&ie=UTF-8) [MegaDrive games on an Xbox 360](https://en.wikipedia.org/wiki/Sonic%27s_Ultimate_Genesis_Collection)? Insanity, but awesome nonetheless.
 
 I've wanted to dabble in writing my own emulator for a long time but in earlier years I lacked confidence and more recently I just didn't feel like I had the time. After watching a colleague of mine at [Mediatonic](https://www.mediatonicgames.com/) write his own working [NES emulator from scratch](https://bitbucket.org/gamezer0/nesemu/raw/64d3b73167568a391e69ef189fc1dc9b4eb395e9/doc/Kike%20Alcor%20-%20Creating%20a%20NES%20emulator%20v2.pdf) I felt I needed to try again. After, *ahem*, gentle encouragement from other colleagues I thought what the heck, I'd give it a try.
