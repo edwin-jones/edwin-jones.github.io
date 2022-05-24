@@ -3,7 +3,7 @@ layout: post
 title:  How I stopped worrying and learned to love emulation
 ---
 
-**_UPDATE 2022: This post has now been rewritten for issue 54 of wireframe magazine and is available [here on page 48.](https://wireframe.raspberrypi.com/issues/54)_**
+**_UPDATE 2022: This post has now been rewritten for issue 54 of Wireframe magazine and is available [here on page 48.](https://wireframe.raspberrypi.com/issues/54)_**
 
 Emulators fancinate me. The idea that you could run a computer within another computer feels like some sort of arcane vodoo magic. [Playing Gamecube games on a PC?](https://www.google.co.uk/search?q=dolphin+emulator&oq=dolphin+emulator&aqs=chrome..69i57.1996j0j7&sourceid=chrome&ie=UTF-8) [MegaDrive games on an Xbox 360](https://en.wikipedia.org/wiki/Sonic%27s_Ultimate_Genesis_Collection)? Insanity, but awesome nonetheless.
 
