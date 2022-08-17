@@ -38,7 +38,6 @@ RUN apk update && \
 ### Build the site
 RUN jekyll build
 
-
 ## Final stage, hosts the site with nginx
 FROM nginx:alpine
 
