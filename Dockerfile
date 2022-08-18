@@ -1,6 +1,6 @@
 # Multistage docker file to build this site and then host it with nginx.
 # Build with `docker build -t {name} .`
-# Run with `docker run --rm -p 8080:80 {name}` then navigate to http://localhost:8080 in a browser.
+# Run with `docker run --rm -p 8080:8080 {name}` then navigate to http://localhost:8080 in a browser.
 
 ## Build site with jekyll and github pages in first stage and name this stage 'builder'
 FROM alpine:latest AS builder
@@ -38,8 +38,8 @@ RUN apk update && \
 ### Build the site
 RUN jekyll build
 
-## Final stage, hosts the site with nginx
-FROM nginx:alpine
+## Final stage, hosts the site with nginx (image uses a rootless user)
+FROM nginxinc/nginx-unprivileged
 
 ### Copy build artifacts from builder stage into nginx html directory for hosting
 COPY --from=builder /site/_site /usr/share/nginx/html/
