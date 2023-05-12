@@ -3,7 +3,7 @@
 # Run with `docker run --rm -p 8080:8080 {name}` then navigate to http://localhost:8080 in a browser.
 
 ## Build site with jekyll and github pages in first stage and name this stage 'builder'
-FROM alpine:latest AS builder
+FROM alpine:3.15.5 AS builder
 
 ### Make a work directory called "site" and copy this repo's files into it
 WORKDIR /site
