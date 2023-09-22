@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Steam Powered
+title: Steam Powered - Make your own Linux based gaming console
 ---
 
 I've been mulling moving over to linux full time for personal use for quite a few years but since I got my [steam deck](https://store.steampowered.com/steamdeck)
