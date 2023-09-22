@@ -6,7 +6,7 @@ title:  Minecrafted
 **UPDATE 28-10-2013 - Due to the fact I will be moving house at the end of the week
 the Minecraft server will be down, for how long I don't know. I have been planning to put
 this entire site on my pi to save money, but then again this server has been far more popular
-than I originally expected thanks for the Pi Foundation et al. We'll see what happens over the next
+than I originally expected thanks to the Pi Foundation et al. We'll see what happens over the next
 few weeks but whatever the outcome I thank all of you heartily for playing on my server.**
 
 Hello all!
