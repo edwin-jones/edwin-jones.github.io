@@ -83,7 +83,7 @@ this is a given as long as I remember to apply the updates themselves now and th
 
 Would I recommend this for everybody? No. Is it perfect? Far from it, I'd prefer a real desktop Steam OS release from 
 Valve, but I think we all know not to wait for Valve to do things if they haven't announced them fully by this point.
-I don't have the same ability to lock the framerate or scaling options as you do on a steam deck due to not using 
+I don't have the same ability to lock the framerate or set scaling options as you do on a steam deck due to not using 
 [gamescope](https://github.com/ValveSoftware/gamescope). 
 My mangohud hack works but isn't easily configurable while in a game like it is on a deck. Sometimes I 
 get bugs that just don't happen on the deck because I'm using an entirely different distro although like a deck I can 
