@@ -3,18 +3,18 @@ layout: post
 title: Steam Powered - Make your own Linux based gaming console
 ---
 
-I've been mulling moving over to linux full time for personal use for quite a few years but since I got my [steam deck](https://store.steampowered.com/steamdeck)
- last year, I've realised it's perfectly viable. Problem is, the steam deck isn't quite powerful enough for my 4k 
-TV in the living room and valve don't actually release a desktop version of [Steam OS](https://en.wikipedia.org/wiki/SteamOS) 
+I've been mulling moving over to [Linux](https://en.wikipedia.org/wiki/Linux) full time for personal use for quite a few years but since I got my [Steam Deck](https://store.steampowered.com/steamdeck)
+ last year, I've realised it's perfectly viable now. Problem is, the Steam Deck isn't quite powerful enough for my 4k 
+TV in the living room and Valve don't actually release a desktop version of [SteamOS](https://en.wikipedia.org/wiki/SteamOS) 
 anymore. After a bit of 
-searching I found that most of the popular mainstream desktop distros like Ubuntu LTS are months to years behind 
+searching I found that most of the popular mainstream desktop distros like [Ubuntu LTS](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release) are months to years behind 
 the latest driver updates needed to run most games on launch and as such aren't always the best choice either.
 
 This left me with a few options:
 
 1. Build my own [arch linux](https://archlinux.org/) install with ~~blackjack and hookers~~ the latest updates.
 2. Use a gaming distro like HoloISO or ChimeraOS.
-3. Use a rolling distribution like Manjaro or openSUSE Tumbleweed to take the heavy lifting away.
+3. Use a [rolling distribution](https://itsfoss.com/rolling-release/) like Manjaro or openSUSE Tumbleweed to take the heavy lifting away.
 
 I opted out of option one as it seemed like a time sink. I did indeed try option 2 for a while but I chose 
 [ChimeraOS](https://chimeraos.org/) 
@@ -29,12 +29,12 @@ Urgh. That was actually caused by
  an update. Neither valve of the Chimera OS people released this for a little while but 
 as soon as I upgraded, I ended up getting [this bug] (https://github.com/ChimeraOS/chimeraos/issues/516) and could 
 only boot into a black screen. I chatted to the devs on their discord and they were super friendly, but they couldn't 
-figure out my issue as I was use an all AMD pc with modern parts and I gave up.
+figure out my issue as I was using an all AMD with modern parts and I gave up.
 
-That left option 3. I wasn't super happy with some of [their known issues](https://github.com/arindas/manjarno) and 
-I wanted the option to use secure boot if I needed, which left openSUSE Tumbleweed. 
+That left option 3. I wasn't happy with some of [manjaro's known issues](https://github.com/arindas/manjarno) and 
+I wanted the option to use secure boot if I needed, which left [openSUSE Tumbleweed.](https://get.opensuse.org/tumbleweed/) 
 As a version of openSUSE with 
-snapshotting and very fast updates, it seemed the best bet. I installed it with KDE to mimic the steam deck's desktop 
+snapshotting and fast updates, it seemed the best bet. I installed it with [KDE to mimic the Steam Deck's desktop](https://www.gamingonlinux.com/2022/10/kde-steam-deck-akademy-2022/) 
 and away I went.
 
 So, I had an desktop OS, but how could I make this more console like? The first thing I did was set steam up to boot 
@@ -53,7 +53,7 @@ worry about which IP on my network my PC is using to turn it on.
 
 I then manually installed MangoHud and used [Goverlay](https://github.com/benjamimgois/goverlay) 
 to globally enable it but set it to hide by default. I set 
-the "toggle" key to F1. I then configured steam input to change the share button on my xbox controller to actually send 
+the "toggle" key to F1. I then configured steam input to change the share button on my Xbox controller to actually send 
 and F1 key press and voila, a sorta steam deck performance overlay feature is bodged into my configuration. This is 
 useful when tweaking settings to get the best performance as my RDNA2 GPU isn't quite good enough for 4k at max 
 settings.
