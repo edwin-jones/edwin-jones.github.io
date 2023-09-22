@@ -20,7 +20,7 @@ I opted out of option one as it seemed like a time sink. I did indeed try option
 [ChimeraOS](https://chimeraos.org/) 
 over [HoloISO](https://github.com/HoloISO/holoiso) 
 as it a) predates the steam deck/modern SteamOS incarnations and b) is more regularly updated than 
-HoloISO. This worked pretty well for a while until Resident Evil 4 hit and we got the wonderful black square issue:
+HoloISO. This worked pretty well for a while until Resident Evil 4 hit and I got the wonderful black square issue:
 
 ![Resident Evil 4 Bug]({{ site.baseurl }}/images/rantimages/RE4Issues.jpg)
 
@@ -31,7 +31,7 @@ as soon as I upgraded, I ended up getting [this bug](https://github.com/ChimeraO
 only boot into a black screen. I chatted to the devs on their discord and they were super friendly but they couldn't 
 figure out my issue and I gave up.
 
-_NB I did try manually updating [Mesa](https://www.mesa3d.org/) before upgrading but on an [immutable OS](https://itsfoss.com/immutable-linux-distros/) like ChimeraOS this is difficult and such changes are often overwritten during updates anyway.
+_NB I did try manually updating [Mesa](https://www.mesa3d.org/) before upgrading but on an [immutable OS](https://itsfoss.com/immutable-linux-distros/) like ChimeraOS this is difficult and such changes are often overwritten during updates anyway._
 
 That left option 3. I wasn't happy with some of [Manjaro's known issues](https://github.com/arindas/manjarno) and 
 I wanted the option to use [secure boot](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot) if I needed, which left [openSUSE Tumbleweed.](https://get.opensuse.org/tumbleweed/) 
