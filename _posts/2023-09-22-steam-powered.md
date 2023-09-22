@@ -89,7 +89,7 @@ My MangoHud hack works but isn't easily configurable while in a game like it is 
 get bugs that just don't happen on the deck because I'm using an entirely different distro although like a deck I can 
 "roll back" to an earlier snapshot should I need to.
 
-All that aside, if you like your Steam Deck but want to game on something a bit beefier with a discrete card without leaving the linux 
+All that aside, if you like your Steam Deck but want to game on something a bit beefier with a discrete card without leaving the Linux 
 ecosystem I can heavily recommend this approach. I hope this helps you find a new way to play your PC games. The 
 best part? All of this software is 100% free and most of it is open source. The year of the linux desktop is finally 
 here - _sort of._
