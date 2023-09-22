@@ -13,13 +13,13 @@ the latest driver updates needed to run most games on launch and as such aren't 
 This left me with a few options:
 
 1. Build my own [arch linux](https://archlinux.org/) install with ~~blackjack and hookers~~ the latest updates.
-2. Use a steam os alike OS like HoloIso or Chimera OS.
+2. Use a gaming distro like HoloISO or ChimeraOS.
 3. Use a rolling distribution like Manjaro or openSUSE Tumbleweed to take the heavy lifting away.
 
 I opted out of option one as it seemed like a time sink. I did indeed try option 2 for a while but I chose 
-[Chimera OS](https://chimeraos.org/) 
+[ChimeraOS](https://chimeraos.org/) 
 over [HoloISO](https://github.com/HoloISO/holoiso) 
-as it a) predates the steam deck/modern steam os incarnations and b) is more regularly updated than 
+as it a) predates the steam deck/modern SteamOS incarnations and b) is more regularly updated than 
 HoloISO. This worked pretty well for a while until Resident Evil 4 hit and we got the wonderful black square issue:
 
 ![Resident Evil 4 Bug]({{ site.baseurl }}/images/rantimages/RE4Issues.jpg)
