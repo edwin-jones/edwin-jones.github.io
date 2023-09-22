@@ -37,7 +37,7 @@ As a version of openSUSE with
 snapshotting and fast updates, it seemed the best bet. I installed it with [KDE to mimic the Steam Deck's desktop](https://www.gamingonlinux.com/2022/10/kde-steam-deck-akademy-2022/) 
 and away I went.
 
-So, I had an desktop OS, but how could I make this more console like? The first thing I did was set steam up to boot 
+So, I had an desktop OS, but how could I make this more console like? The first thing I did was set Steam up to boot 
 into ["Big Picture" mode.](https://help.steampowered.com/en/faqs/view/3725-76D3-3F31-FB63) 
 This has had a revamp and is now much more like the desk gaming mode layout but misses a few 
 things - you don't get [MangoHud](https://wiki.archlinux.org/title/MangoHud) out of the box for instance.
@@ -54,7 +54,7 @@ worry about which IP on my network my PC is using to turn it on.
 
 I then manually installed MangoHud and used [Goverlay](https://github.com/benjamimgois/goverlay) 
 to globally enable it but set it to hide by default. I set 
-the "toggle" key to F1. I then configured steam input to change the share button on my Xbox controller to actually send 
+the "toggle" key to F1. I then configured Steam to change the share button on my Xbox controller to actually send 
 and F1 key press and voila, a basic Steam Deck like performance overlay feature is bodged into my configuration. This is 
 useful when tweaking settings to get the best performance as my RX 6700 GPU isn't quite good enough for 4k at max 
 settings for most new games.
