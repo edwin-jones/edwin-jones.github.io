@@ -39,7 +39,7 @@ As a version of openSUSE with
 snapshotting and fast updates, it seemed the best bet. I installed it with [KDE to mimic the Steam Deck's desktop](https://www.gamingonlinux.com/2022/10/kde-steam-deck-akademy-2022/) 
 and away I went.
 
-So, I had an desktop OS, but how could I make this more console like? The first thing I did was set Steam up to boot 
+So I finally had installed a Linux distro that could run my games well without issue but how could I make this more console like? The first thing I did was set Steam up to boot 
 into ["Big Picture" mode.](https://help.steampowered.com/en/faqs/view/3725-76D3-3F31-FB63) 
 This has had a revamp and is now much more like the desk gaming mode layout but misses a few 
 things - you don't get [MangoHud](https://wiki.archlinux.org/title/MangoHud) out of the box for instance.
