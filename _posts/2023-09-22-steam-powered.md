@@ -31,6 +31,8 @@ as soon as I upgraded, I ended up getting [this bug](https://github.com/ChimeraO
 only boot into a black screen. I chatted to the devs on their discord and they were super friendly but they couldn't 
 figure out my issue and I gave up.
 
+_NB I did try manually updating [Mesa](https://www.mesa3d.org/) before upgrading but on an [immutable OS](https://itsfoss.com/immutable-linux-distros/) like ChimeraOS this is difficult and such changes are often overwritten during updates anyway.
+
 That left option 3. I wasn't happy with some of [Manjaro's known issues](https://github.com/arindas/manjarno) and 
 I wanted the option to use [secure boot](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot) if I needed, which left [openSUSE Tumbleweed.](https://get.opensuse.org/tumbleweed/) 
 As a version of openSUSE with 
