@@ -65,7 +65,7 @@ I was mostly there and switching between my homebrew console and the Steam Deck 
 suddenly noticed something odd - sometimes some games would crash to the Steam UI without warning but not on the Steam Deck, 
 only my desktop PC. After a bit of reading I realised that I had to boost the 
 [vm.max_map_count setting](https://www.phoronix.com/news/Fedora-39-VM-Max-Map-Count) manually to make sure gaming processes 
-didn't crash when trying to use more memory than expected. This solved the problem and made me feel chuffed that I 
+didn't crash when trying to use more memory maps than expected. This solved the problem and made me feel chuffed that I 
 had fixed it myself without giving up again and hopping to a new distro.
 
 I was almost there. The final problem was anytime I wanted to run updates or configure anything non gaming related I had to 
