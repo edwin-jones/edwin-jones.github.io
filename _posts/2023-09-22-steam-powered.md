@@ -83,13 +83,13 @@ this is a given as long as I remember to apply the updates themselves now and th
 
 Would I recommend this for everybody? No. Is it perfect? Far from it, I'd prefer a real desktop Steam OS release from 
 Valve, but I think we all know not to wait for Valve to do things if they haven't announced them fully by this point.
-I don't have the same ability to lock the framerate or set scaling options as you do on a steam deck due to not using 
+I don't have the same ability to lock the framerate or set scaling options as you do on a Steam Deck due to not using 
 [gamescope](https://github.com/ValveSoftware/gamescope). 
-My mangohud hack works but isn't easily configurable while in a game like it is on a deck. Sometimes I 
+My MangoHud hack works but isn't easily configurable while in a game like it is on a deck. Sometimes I 
 get bugs that just don't happen on the deck because I'm using an entirely different distro although like a deck I can 
 "roll back" to an earlier snapshot should I need to.
 
-All that aside, if you like your steam deck but want to game on something a bit beefier with a discrete card without leaving the linux 
+All that aside, if you like your Steam Deck but want to game on something a bit beefier with a discrete card without leaving the linux 
 ecosystem I can heavily recommend this approach. I hope this helps you find a new way to play your PC games. The 
 best part? All of this software is 100% free and most of it is open source. The year of the linux desktop is finally 
 here - _sort of._
