@@ -12,7 +12,7 @@ the latest driver updates needed to run most games on launch and as such aren't 
 
 This left me with a few options:
 
-1. Build my own arch install with ~~blackjack and hookers~~ the latest updates.
+1. Build my own [arch linux](https://archlinux.org/) install with ~~blackjack and hookers~~ the latest updates.
 2. Use a steam os alike OS like HoloIso or Chimera OS.
 3. Use a rolling distribution like Manjaro or openSUSE Tumbleweed to take the heavy lifting away.
 
