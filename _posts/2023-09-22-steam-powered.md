@@ -43,7 +43,8 @@ This has had a revamp and is now much more like the desk gaming mode layout but 
 things - you don't get [MangoHud](https://wiki.archlinux.org/title/MangoHud) out of the box for instance.
 
 Once I had that, I needed to make sure I could use the PC without getting up off the sofa. I updated the firmware on 
-my Xbox Series X controller and Xbox BT headset and connected them manually I then configured 
+my [Xbox controller](https://www.xbox.com/en-gb/accessories/controllers/xbox-wireless-controller#white) 
+and [Xbox wireless headset](https://www.xbox.com/en-GB/accessories/headsets/xbox-wireless-headset) then connected them [manually via bluetooth.](https://en.opensuse.org/Bluetooth) I then configured 
 [Wake on Lan](https://en.wikipedia.org/wiki/Wake-on-LAN) 
 so the PC could be remotely activated as long as it had wired ethernet. I use an iPhone app called 
 ["Wake me up"](https://apps.apple.com/us/app/wake-me-up-wake-on-lan/id1465416032) to 
@@ -54,13 +55,13 @@ worry about which IP on my network my PC is using to turn it on.
 I then manually installed MangoHud and used [Goverlay](https://github.com/benjamimgois/goverlay) 
 to globally enable it but set it to hide by default. I set 
 the "toggle" key to F1. I then configured steam input to change the share button on my Xbox controller to actually send 
-and F1 key press and voila, a sorta steam deck performance overlay feature is bodged into my configuration. This is 
-useful when tweaking settings to get the best performance as my RDNA2 GPU isn't quite good enough for 4k at max 
-settings.
+and F1 key press and voila, a basic Steam Deck like performance overlay feature is bodged into my configuration. This is 
+useful when tweaking settings to get the best performance as my RX 6700 GPU isn't quite good enough for 4k at max 
+settings for most new games.
 
-I was mostly there and switching between my homebrew console and steam deck without issue via steam cloud but I 
-suddenly noticed something odd - sometimes some games would crash to the steam UI without warning but not on the deck, 
-only the desktop. After a bit of reading I realised that I had to boost the 
+I was mostly there and switching between my homebrew console and the Steam Deck without issue via [Steam Cloud](https://help.steampowered.com/en/faqs/view/68D2-35AB-09A9-7678) but I 
+suddenly noticed something odd - sometimes some games would crash to the Steam UI without warning but not on the Steam Deck, 
+only my desktop PC. After a bit of reading I realised that I had to boost the 
 [vm.max_map_count setting](https://www.phoronix.com/news/Fedora-39-VM-Max-Map-Count) manually to make sure gaming processes 
 didn't crash when trying to use more memory than expected. This solved the problem and made me feel chuffed that I 
 had fixed it myself without giving up again and hopping to a new distro.
@@ -68,15 +69,15 @@ had fixed it myself without giving up again and hopping to a new distro.
 I was almost there. The final problem was anytime I wanted to run updates or configure anything non gaming related I had to 
 plug in a keyboard and sit by my TV which was annoying. The solution was simple = 
 [VNC!](https://en.wikipedia.org/wiki/Virtual_Network_Computing) I used [Remmina](https://remmina.org/) 
-as a client from my ubuntu laptop. I did have to manually add a firewall exception for RDP and SSH via 
+as a client from my Ubuntu laptop. I did have to manually add a firewall exception for VNC via 
 [YaST](https://yast.opensuse.org/) which is an openSUSE tool I'd never used before but after that everything just 
 worked. I've not needed to plug anything directly into the PC since; It just sits on the floor by the TV without
-a care in the world, other than the odd dust cleaning session now and then.
+a care in the world other than the odd dust cleaning session now and then.
 
 Finally, I had it - a working Linux gaming console that gets some updates faster than 
-a steam deck does. I've had no compatbility issues with it either as anything the deck can run can run here as well. 
-The joy of linux means hardware upgrades are simply plug and play as long as my kernel is up to date and with openSUSE tumbleweed 
-this is a given, as long as I remember to apply the updates themselves now and then.
+a Steam Deck does. I've had no compatibility issues with it either as anything the Steam Deck can run will run here as well. 
+The joy of Linux means hardware upgrades are simply plug and play as long as my [kernel](https://en.wikipedia.org/wiki/Linux_kernel) is up to date. With openSUSE tumbleweed 
+this is a given as long as I remember to apply the updates themselves now and then.
 
 Would I recommend this for everybody? No. Is it perfect? Far from it, I'd prefer a real desktop Steam OS release from 
 Valve, but I think we all know not to wait for Valve to do things if they haven't announced them fully by this point.
