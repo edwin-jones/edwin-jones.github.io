@@ -27,7 +27,7 @@ HoloISO. This worked pretty well for a while until Resident Evil 4 hit and we go
 Urgh. That was actually caused by
 [an issue with Mesa](https://steamdeckhq.com/tips-and-guides/how-to-fix-graphical-issues-in-the-re4-demo/) that required
  an update. Neither valve of the Chimera OS people released this for a little while but 
-as soon as I upgraded, I ended up getting [this bug] (https://github.com/ChimeraOS/chimeraos/issues/516) and could 
+as soon as I upgraded, I ended up getting [this bug](https://github.com/ChimeraOS/chimeraos/issues/516) and could 
 only boot into a black screen. I chatted to the devs on their discord and they were super friendly, but they couldn't 
 figure out my issue as I was using an all AMD with modern parts and I gave up.
 
