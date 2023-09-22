@@ -19,7 +19,7 @@ This left me with a few options:
 I opted out of option one as it seemed like a time sink. I did indeed try option 2 for a while but I chose 
 [ChimeraOS](https://chimeraos.org/) 
 over [HoloISO](https://github.com/HoloISO/holoiso) 
-as it a) predates the steam deck/modern SteamOS incarnations and b) is more regularly updated than 
+as it a) predates the Steam Deck/modern SteamOS incarnations and b) is more regularly updated than 
 HoloISO. This worked pretty well for a while until Resident Evil 4 hit and I got the wonderful black square issue:
 
 ![Resident Evil 4 Bug]({{ site.baseurl }}/images/rantimages/RE4Issues.jpg)
