@@ -54,7 +54,7 @@ send the magic wake up packet to my [network broadcast address](https://www.pcma
 which works like charm and also means I do not need to 
 worry about which IP on my network my PC is using to turn it on.
 
-I then manually installed MangoHud and used [Goverlay](https://github.com/benjamimgois/goverlay) 
+I then manually installed MangoHud and used [GOverlay](https://github.com/benjamimgois/goverlay) 
 to globally enable it but set it to hide by default. I set 
 the "toggle" key to F1. I then configured Steam to change the share button on my Xbox controller to actually send 
 and F1 key press and voila, a basic Steam Deck like performance overlay feature is bodged into my configuration. This is 
