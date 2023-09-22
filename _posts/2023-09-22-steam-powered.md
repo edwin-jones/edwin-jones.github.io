@@ -5,7 +5,7 @@ title: Steam Powered - Make your own Linux based gaming console
 
 I've been mulling moving over to [Linux](https://en.wikipedia.org/wiki/Linux) full time for personal gaming use for quite a few years but since I got my [Steam Deck](https://store.steampowered.com/steamdeck)
  last year, I've realised it's perfectly viable now thanks to [Proton.](https://github.com/ValveSoftware/Proton) Problem is, the Steam Deck isn't quite powerful enough for my 4k 
-TV in the living room and Valve don't actually release a desktop version of [SteamOS](https://en.wikipedia.org/wiki/SteamOS) 
+TV in the living room and [Valve](https://www.valvesoftware.com/en/) don't actually release a desktop version of [SteamOS](https://en.wikipedia.org/wiki/SteamOS) 
 anymore. After a bit of 
 searching I found that most of the popular mainstream desktop distros like [Ubuntu LTS](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release) are months to years behind 
 the latest driver updates needed to run most games on launch and as such aren't always the best choice either.
