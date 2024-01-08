@@ -69,7 +69,7 @@ didn't crash when trying to use more memory maps than expected. This solved the 
 had fixed it myself without giving up again and hopping to a new distro.
 
 I was almost there. The final problem was anytime I wanted to run updates or configure anything non gaming related I had to 
-plug in a keyboard and sit by my TV which was annoying. The solution was simple = 
+plug in a keyboard and sit by my TV which was annoying. The solution was simple: 
 [VNC!](https://en.wikipedia.org/wiki/Virtual_Network_Computing) I used [Remmina](https://remmina.org/) 
 as a client from my Ubuntu laptop. I did have to manually add a firewall exception for VNC via 
 [YaST](https://yast.opensuse.org/) which is an openSUSE tool I'd never used before but after that everything just 
