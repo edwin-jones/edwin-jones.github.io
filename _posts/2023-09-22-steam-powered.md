@@ -51,8 +51,7 @@ and [Xbox wireless headset](https://www.xbox.com/en-GB/accessories/headsets/xbox
 so the PC could be remotely activated as long as it had wired ethernet. I use an iPhone app called 
 ["Wake me up"](https://apps.apple.com/us/app/wake-me-up-wake-on-lan/id1465416032) to 
 send the magic wake up packet to my [network broadcast address](https://www.pcmag.com/encyclopedia/term/broadcast-address) 
-which works like charm and also means I do not need to 
-worry about which IP on my network my PC is using to turn it on.
+which works like charm.
 
 I then manually installed MangoHud and used [GOverlay](https://github.com/benjamimgois/goverlay) 
 to globally enable it but set it to hide by default. I set 
