@@ -48,7 +48,7 @@ Once I had that, I needed to make sure I could use the PC without getting up off
 my [Xbox controller](https://www.xbox.com/en-gb/accessories/controllers/xbox-wireless-controller#white) 
 and [Xbox wireless headset](https://www.xbox.com/en-GB/accessories/headsets/xbox-wireless-headset) then connected them [manually via bluetooth.](https://en.opensuse.org/Bluetooth) I then configured 
 [Wake on Lan](https://en.wikipedia.org/wiki/Wake-on-LAN) 
-so the PC could be remotely activated as long as it had wired ethernet. I use an iPhone app called 
+so the PC could be remotely activated as long as it had a wired ethernet connection. I use an iPhone app called 
 ["Wake me up"](https://apps.apple.com/us/app/wake-me-up-wake-on-lan/id1465416032) to 
 send the magic wake up packet to my [network broadcast address](https://www.pcmag.com/encyclopedia/term/broadcast-address) 
 which works like charm.
