@@ -1,1 +1,14 @@
 media: images
+
+content:
+  - name: posts
+    label: Posts
+    path: _posts
+    type: collection
+    fields:
+    - name: title
+      type: string
+      label: Title
+      options:
+        minlength: 20
+        maxlength: 160
