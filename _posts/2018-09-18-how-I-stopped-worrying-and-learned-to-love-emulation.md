@@ -205,11 +205,7 @@ After stepping through each error the test rom threw up I found that the basic f
 ![très bon]({{ site.baseurl }}/images/rantimages/bon-by-best-coder.png)
 <br>
 
-It's silly, but it meant the emulator was mostly working! In my excitement I immediately booted up a full phat game [(space invaders)](https://en.wikipedia.org/wiki/Space_Invaders) and was overjoyed to see the awesome title screen run:
-
-<br>
-![space invaders](https://pbs.twimg.com/media/DmbNStSW0AEpAZs.jpg)
-<br>
+It's silly, but it meant the emulator was mostly working! In my excitement I immediately booted up a full phat game [(space invaders)](https://en.wikipedia.org/wiki/Space_Invaders) and was overjoyed to see the awesome title screen run.
 
 Sadly, in my haste I hadn't actually implemented input or sound yet so I couldn't move any further than the menu screen. I was also confused as the screen appeared to flicker slightly. This was due to me running my emulator far too slowly *(a CHIP-8 runs best at roughly ~500hz and I was running it at 60hz)* and the drawing operation being rather slow to begin with. I looked up some footage of other CHIP-8 emulators and when I saw the same oddness I breathed a sigh of relief.
 
