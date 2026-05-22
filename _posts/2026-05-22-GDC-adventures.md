@@ -1,5 +1,3 @@
-# GDC Adventures
-
 I've been in the industry a long time but I have to say working on [Fall Guys](https://www.fallguys.com/) was a dream come true in that we didn't predict how big it would become and it smashed our wildest expectations.
 
 Another long term dream of mine was 
