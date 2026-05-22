@@ -5,4 +5,4 @@ to present at GDC. In 2024 I did exactly that with a talk about [backend service
 our launch window and beyond.
 
 If you fancy learning more about how to handle scaling for large amounts of players with a real life use case, please take a look at
-those linked slides or watch the talk if you have [GDC vault access.](https://gdcvault.com).
+those linked slides or watch the talk if you have [GDC vault access.](https://gdcvault.com)
